@@ -114,20 +114,20 @@ Here show run **161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw** as an example,
 
  `Run` |  `Channel` | `BioReplicate` | `Condition`
 -------|------------|----------------|-----------
-	1    |		X127C    |     1.X127C     |    0.125
-	1    |		X129N    |     1.X129N     |    0.125
-	1    |		X128N    |     1.X128N     |    0.5
-	1    |		X129C    |     1.X129C     |    0.5
-	1    |		X127N    |     1.X127N     |    0.667
-	1    |		X130C    |     1.X130C     |    0.667
-	1    |		X128C    |     1.X128C     |    1
-	1    |		X130N    |     1.X130N     |    1
-	1    |		X126     |     1.X126      |    Norm
-	1    |		X131     |     1.X131      |    Norm
+	1    |		X127C    |     0.125     |    0.125
+	1    |		X129N    |     0.125     |    0.125
+	1    |		X128N    |     0.5       |    0.5
+	1    |		X129C    |     0.5       |    0.5
+	1    |		X127N    |     0.667     |    0.667
+	1    |		X130C    |     0.667     |    0.667
+	1    |		X128C    |     1         |    1
+	1    |		X130N    |     1         |    1
+	1    |		X126     |     Norm      |    Norm
+	1    |		X131     |     Norm      |    Norm
 
 The most important is that 1) `Run` is not order of spectral acquisition, but just unique MS run ID 2) if normalization between runs need to be done, then each run must have at least one `Norm` channel 3) `Channel` column in the annotation file should match with the corresponding channel names in in output of `Proteome Discoverer` 4) **Spectrum.File** in the PSM output of `Proteome Discoverer` should be the **Run** column in the annotation file 5) If one channel of one mixture doesn't have sample, put `None` under **Condition** and **BioReplicate** column .
 
-Annotation information is required to fill in **Condition**, **TechRepMixture**, **Mixture** and **BioReplicate** for corresponding **Run** and **Channel** information. Users have to prepare as csv or txt file like 'PD_Annotation.csv', which includes **Run**, **Channel**, **Condition**, **BioReplicate**, **TechRepMixture** and **Mixture** information, and load it in R.
+Annotation information is required to fill in **Condition**, **TechRepMixture**, **Fraction**, **Mixture** and **BioReplicate** for corresponding **Run** and **Channel** information. Users have to prepare as csv or txt file like 'PD_Annotation.csv', which includes **Run**, **Channel**, **Condition**, **BioReplicate**, **TechRepMixture**, **Fraction** and **Mixture** information, and load it in R.
 
 ```{r}
 annot.pd <- read.csv(file="data/data_ProteomeDiscoverer_TMT/PD_Annotation.csv")
@@ -213,7 +213,6 @@ Here is the summary of pre-processing steps in `PDtoMSstatsTMTFormat` function.
 
 + Peptide ions which are shared by more than one protein are removed
 + If one spectrum has multiple identifications within one run, it only keeps the best identification which has most measurements within that run or highest identification score or largest summation of all the measurements within that run
-+ If one peptide ion has any missing value within one run, it removes the peptide ion from that run
 + For fractionation, it removes the shared peptide ions among the fractions of each mixture and then combine all the fractions for each mixture
 
 
@@ -270,7 +269,7 @@ colnames(evi)
 unique(evi$Raw.file)
 ```
 
-Again, we need file annotation file, required to fill in Condition, BioReplicate and Mixture for corresponding Run and Channel information. Users have to prepare as csv or txt file like ‘MaxQuant_annotation.csv’, which includes **Run**, **Channel**, **Condition**, **BioReplicate**, **TechRepMixture** and **Mixture** information, and load it in R.
+Again, we need file annotation file, required to fill in Condition, BioReplicate and Mixture for corresponding Run and Channel information. Users have to prepare as csv or txt file like ‘MaxQuant_annotation.csv’, which includes **Run**, **Channel**, **Condition**, **BioReplicate**, **TechRepMixture**, **Fraction** and **Mixture** information, and load it in R.
 
 
 #### Set annotation file
@@ -293,7 +292,6 @@ Here is the summary of pre-processing steps in `MaxQtoMSstatsTMTFormat` function
 + Use `Proteins` in ‘proteinGroups.txt’ as protein ID
 + Peptide ions which are shared by more than one protein are removed
 + If one spectrum has multiple identifications within one run, it only keeps the best identification which has most measurements within that run or highest identification score or largest summation of all the measurements within that run
-+ If one peptide ion has any missing value within one run, it removes the peptide ion from that run
 + For fractionation, it removes the shared peptide ions among the fractions of each mixture and then combine all the fractions for each mixture
 
 ```{r, eval=F}
@@ -628,13 +626,9 @@ head(test.pd)
 SignificantProteins <- 
   test.pd[test.pd$adj.pvalue <= 0.05 ,]
 
-SignificantProteins
-
-nrow(SignificantProteins)
-
-# select subset of rows with adj.pvalue < 0.05 and absoluate log2FC > 1
-SignificantProteinsLargeFC <- SignificantProteins[abs(SignificantProteins$log2FC) > 1 ,]
-SignificantProteinsLargeFC
+# make volcano plot
+library(MSstats)
+groupComparisonPlots(data=test.pd, type="VolcanoPlot")
 ```
 
 #### Different parameter options for group comparison
@@ -650,6 +644,9 @@ test.pd.pairwise <- groupComparisonTMT(data = quant.pd,
 
 # show the comparisons
 unique(test.pd.pairwise$Label)
+
+# make volcano plot
+groupComparisonPlots(data=test.pd.pairwise, type="VolcanoPlot")
 ```
 
 ### msstatstmt.log and sessionInfo.txt
