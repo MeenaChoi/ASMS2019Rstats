@@ -1,0 +1,58 @@
+---
+title: "ASMS 2019: Case studies in quantitative proteomics"
+author: "Meena Choi and Ting Huang"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+---
+
+# Before we start {-}
+
+- Download the data files here: https://drive.google.com/drive/u/2/folders/16QsY4zqkemAWWdP8afr2Qpb-UpABth8o
+
+
+## Schedule {-}
+
+
+| Day | Time            | Content                                                                                            |
+|-----|-----------------|----------------------------------------------------------------------------------------------------|
+| 2  | 9:00 - 10:30am   | Hands-on: Intro R, data exploration and basic statistics (MC)                                |
+|     | 10:30 - 11:00am   | Breaks                                                                                     |
+|     | 11:00 - 12:00pm   | Kecture: [`MSstats`](https://bioconductor.org/packages/release/bioc/html/MSstats.html)/ [`MSstatsTMT`](https://bioconductor.org/packages/release/bioc/html/MSstatsTMT.html) (OV)                               |
+|     | 12:00 - 1:00pm | Lunch break                                                                                   |
+|     | 1:00 - 2:30pm  | Hands-on: Differential abundance analysis in MSstats (MC)                                     |
+|     | 2:30 - 3:00pm   | Breaks                                                                                       |
+|     | 3:00 - 4:00pm   | Hands-on: MSstatsOV (TH)                                                                     |
+
+
+Meena Choi (MC), Ting Huang (TH), Olga Vitek (OV)
+
+## License {-}
+
+
+This material, unless otherwise stated, is made available under the
+[Creative Commons Attribution
+license](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to:
+
+* **Share** - copy and redistribute the material in any medium or format
+* **Adapt** - remix, transform, and build upon the material for any
+  purpose, even commercially.
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+
+* **Attribution** - You must give appropriate credit, provide a link
+  to the license, and indicate if changes were made. You may do so in
+  any reasonable manner, but not in any way that suggests the licensor
+  endorses you or your use.
+
+No additional restrictions - You may not apply legal terms or
+technological measures that legally restrict others from doing
+anything the license permits.
+
+

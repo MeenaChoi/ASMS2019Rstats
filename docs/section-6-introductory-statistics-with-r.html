@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Section 6: Introductory statistics with R | ASMS 2019: Case studies in quantitative proteomics</title>
+  <meta name="description" content="Chapter 1 Section 6: Introductory statistics with R | ASMS 2019: Case studies in quantitative proteomics" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Section 6: Introductory statistics with R | ASMS 2019: Case studies in quantitative proteomics" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Section 6: Introductory statistics with R | ASMS 2019: Case studies in quantitative proteomics" />
+  
+  
+  
+
+<meta name="author" content="Meena Choi and Ting Huang" />
+
+
+<meta name="date" content="2019-06-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="section-8-msstats.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Before we start</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#schedule"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#license"><i class="fa fa-check"></i>License</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html"><i class="fa fa-check"></i><b>1</b> Section 6: Introductory statistics with R</a><ul>
+<li class="chapter" data-level="1.1" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#basic-statistics"><i class="fa fa-check"></i><b>1.1</b> Basic statistics</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#randomization"><i class="fa fa-check"></i><b>1.1.1</b> Randomization</a></li>
+<li class="chapter" data-level="1.1.2" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#basic-statistical-summaries"><i class="fa fa-check"></i><b>1.1.2</b> Basic statistical summaries</a></li>
+<li class="chapter" data-level="1.1.3" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#visualization-with-error-bars-for-descriptive-purpose"><i class="fa fa-check"></i><b>1.1.3</b> Visualization with error bars for descriptive purpose</a></li>
+<li class="chapter" data-level="1.1.4" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#working-with-statistical-distributions"><i class="fa fa-check"></i><b>1.1.4</b> Working with statistical distributions</a></li>
+<li class="chapter" data-level="1.1.5" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#calculate-the-confidence-interval"><i class="fa fa-check"></i><b>1.1.5</b> Calculate the confidence interval</a></li>
+<li class="chapter" data-level="1.1.6" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#saving-our-results"><i class="fa fa-check"></i><b>1.1.6</b> Saving our results</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#statistical-hypothesis-test"><i class="fa fa-check"></i><b>1.2</b> Statistical hypothesis test</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#two-sample-t-test-for-one-protein-with-one-feature"><i class="fa fa-check"></i><b>1.2.1</b> Two sample t-test for one protein with one feature</a></li>
+<li class="chapter" data-level="1.2.2" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#the-htest-class"><i class="fa fa-check"></i><b>1.2.2</b> The <code>htest</code> class</a></li>
+<li class="chapter" data-level="1.2.3" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#re-calculating-the-p-values"><i class="fa fa-check"></i><b>1.2.3</b> Re-calculating the p values</a></li>
+<li class="chapter" data-level="1.2.4" data-path="section-6-introductory-statistics-with-r.html"><a href="section-6-introductory-statistics-with-r.html#choosing-a-model"><i class="fa fa-check"></i><b>1.2.4</b> Choosing a model</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="section-8-msstats.html"><a href="section-8-msstats.html"><i class="fa fa-check"></i><b>2</b> Section 8 : MSstats</a><ul>
+<li class="chapter" data-level="2.1" data-path="section-8-msstats.html"><a href="section-8-msstats.html#introduction-to-data-and-preprocessing"><i class="fa fa-check"></i><b>2.1</b> introduction to data and preprocessing</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="section-8-msstats.html"><a href="section-8-msstats.html#objective"><i class="fa fa-check"></i><b>2.1.1</b> Objective</a></li>
+<li class="chapter" data-level="2.1.2" data-path="section-8-msstats.html"><a href="section-8-msstats.html#workflow-in-msstats"><i class="fa fa-check"></i><b>2.1.2</b> Workflow in MSstats</a></li>
+<li class="chapter" data-level="2.1.3" data-path="section-8-msstats.html"><a href="section-8-msstats.html#data"><i class="fa fa-check"></i><b>2.1.3</b> Data</a></li>
+<li class="chapter" data-level="2.1.4" data-path="section-8-msstats.html"><a href="section-8-msstats.html#load-msstats"><i class="fa fa-check"></i><b>2.1.4</b> Load MSstats</a></li>
+<li class="chapter" data-level="2.1.5" data-path="section-8-msstats.html"><a href="section-8-msstats.html#allowable-data-formats"><i class="fa fa-check"></i><b>2.1.5</b> Allowable data formats</a></li>
+<li class="chapter" data-level="2.1.6" data-path="section-8-msstats.html"><a href="section-8-msstats.html#convert-to-msstats-required-format-data-cleaning"><i class="fa fa-check"></i><b>2.1.6</b> Convert to MSstats required format (Data cleaning)</a></li>
+<li class="chapter" data-level="2.1.7" data-path="section-8-msstats.html"><a href="section-8-msstats.html#save-your-work"><i class="fa fa-check"></i><b>2.1.7</b> Save your work</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="section-8-msstats.html"><a href="section-8-msstats.html#data-processing---normalization-and-run-summarization"><i class="fa fa-check"></i><b>2.2</b> Data processing - Normalization and run summarization</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="section-8-msstats.html"><a href="section-8-msstats.html#dataprocess-with-skyline-data"><i class="fa fa-check"></i><b>2.2.1</b> dataProcess with Skyline data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="section-8-msstats.html"><a href="section-8-msstats.html#dataprocess-with-maxquant-data"><i class="fa fa-check"></i><b>2.2.2</b> dataProcess with MaxQuant data</a></li>
+<li class="chapter" data-level="2.2.3" data-path="section-8-msstats.html"><a href="section-8-msstats.html#dataprocess-with-openms-data"><i class="fa fa-check"></i><b>2.2.3</b> dataProcess with OpenMS data</a></li>
+<li class="chapter" data-level="2.2.4" data-path="section-8-msstats.html"><a href="section-8-msstats.html#dataprocess-with-progenesis-data"><i class="fa fa-check"></i><b>2.2.4</b> dataProcess with Progenesis data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-8-msstats.html"><a href="section-8-msstats.html#differential-abundance-and-sample-size-calculation"><i class="fa fa-check"></i><b>2.3</b> Differential abundance and sample size calculation</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="section-8-msstats.html"><a href="section-8-msstats.html#inference-and-future-design-of-experiment-with-skyline-output"><i class="fa fa-check"></i><b>2.3.1</b> Inference and future design of experiment with Skyline output</a></li>
+<li class="chapter" data-level="2.3.2" data-path="section-8-msstats.html"><a href="section-8-msstats.html#inference-and-future-design-of-experiment-with-skyline-output-1"><i class="fa fa-check"></i><b>2.3.2</b> Inference and future design of experiment with Skyline output</a></li>
+<li class="chapter" data-level="2.3.3" data-path="section-8-msstats.html"><a href="section-8-msstats.html#inference-and-future-design-of-experiment-with-openms-output"><i class="fa fa-check"></i><b>2.3.3</b> Inference and future design of experiment with OpenMS output</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html"><i class="fa fa-check"></i><b>3</b> Section 9: MSstatsTMT</a><ul>
+<li class="chapter" data-level="3.1" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#introductioin-to-data-and-preprocessing"><i class="fa fa-check"></i><b>3.1</b> Introductioin to data and preprocessing</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#objective-1"><i class="fa fa-check"></i><b>3.1.1</b> Objective</a></li>
+<li class="chapter" data-level="3.1.2" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#data-1"><i class="fa fa-check"></i><b>3.1.2</b> Data</a></li>
+<li class="chapter" data-level="3.1.3" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#load-msstatstmt"><i class="fa fa-check"></i><b>3.1.3</b> Load MSstatsTMT</a></li>
+<li class="chapter" data-level="3.1.4" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#allowable-data-formats-1"><i class="fa fa-check"></i><b>3.1.4</b> Allowable data formats</a></li>
+<li class="chapter" data-level="3.1.5" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#proteome-discoverer-output"><i class="fa fa-check"></i><b>3.1.5</b> Proteome Discoverer output</a></li>
+<li class="chapter" data-level="3.1.6" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#maxquant-output-1"><i class="fa fa-check"></i><b>3.1.6</b> MaxQuant output</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#summarization-normalization-and-significance-analysis"><i class="fa fa-check"></i><b>3.2</b> Summarization, normalization and significance analysis</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#objective-2"><i class="fa fa-check"></i><b>3.2.1</b> Objective</a></li>
+<li class="chapter" data-level="3.2.2" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#data-2"><i class="fa fa-check"></i><b>3.2.2</b> Data</a></li>
+<li class="chapter" data-level="3.2.3" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#process-with-processed-pd-data"><i class="fa fa-check"></i><b>3.2.3</b> Process with processed PD data</a></li>
+<li class="chapter" data-level="3.2.4" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#normalizing-and-summarizing-data-with-proteinsummarization"><i class="fa fa-check"></i><b>3.2.4</b> Normalizing and summarizing data with proteinSummarization</a></li>
+<li class="chapter" data-level="3.2.5" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#visualization-of-processed-data-1"><i class="fa fa-check"></i><b>3.2.5</b> Visualization of processed data</a></li>
+<li class="chapter" data-level="3.2.6" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#different-parameter-options-for-summarization-and-normalization"><i class="fa fa-check"></i><b>3.2.6</b> Different parameter options for summarization and normalization</a></li>
+<li class="chapter" data-level="3.2.7" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#finding-differentially-abundant-proteins-across-conditions-1"><i class="fa fa-check"></i><b>3.2.7</b> Finding differentially abundant proteins across conditions</a></li>
+<li class="chapter" data-level="3.2.8" data-path="section-9-msstatstmt.html"><a href="section-9-msstatstmt.html#msstatstmt.log-and-sessioninfo.txt"><i class="fa fa-check"></i><b>3.2.8</b> msstatstmt.log and sessionInfo.txt</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ASMS 2019: Case studies in quantitative proteomics</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-6-introductory-statistics-with-r" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Section 6: Introductory statistics with R</h1>
+<p><strong>Objectives</strong></p>
+<ul>
+<li>Randomization and basic statistics</li>
+<li>Statistical hypothesis testing: t-test</li>
+<li>Sample size calculation</li>
+<li>Analysis for categorical data</li>
+<li>Linear regression and correlation</li>
+</ul>
+<div id="basic-statistics" class="section level2">
+<h2><span class="header-section-number">1.1</span> Basic statistics</h2>
+<div id="randomization" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Randomization</h3>
+<div id="random-selection-of-samples-from-a-larger-set" class="section level4">
+<h4><span class="header-section-number">1.1.1.1</span> Random selection of samples from a larger set</h4>
+<p>Let’s assume that we have the population with a total of 10 subjects. Suppose we label them from 1 to 10 and randomly would like
+to select 3 subjects we can do this using the <code>sample</code> function. When
+we run <code>sample</code> another time, different subjects will be selected. Try
+this a couple times.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">10</span>, <span class="dv">3</span>)</code></pre>
+<pre><code>## [1] 2 5 6</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sample</span>(<span class="dv">10</span>, <span class="dv">3</span>)</code></pre>
+<pre><code>## [1]  9  5 10</code></pre>
+<p>Now suppose we would like to select the same randomly selected samples
+every time, then we can use a random seed number.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">3728</span>)
+<span class="kw">sample</span>(<span class="dv">10</span>, <span class="dv">3</span>)</code></pre>
+<pre><code>## [1]  1  9 10</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">3728</span>)
+<span class="kw">sample</span>(<span class="dv">10</span>, <span class="dv">3</span>)</code></pre>
+<pre><code>## [1]  1  9 10</code></pre>
+<p>Let’s practice with fun example. Select two in our group member for coming early next Monday.</p>
+<pre class="sourceCode r"><code class="sourceCode r">group.member &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Cyril&#39;</span>, <span class="st">&#39;Dan&#39;</span>, <span class="st">&#39;Kylie&#39;</span>, <span class="st">&#39;Meena&#39;</span>, <span class="st">&#39;Sara&#39;</span>, <span class="st">&#39;Ting&#39;</span>, <span class="st">&#39;Tsung-Heng&#39;</span>, <span class="st">&#39;Tyler&#39;</span>)
+<span class="kw">sample</span>(group.member, <span class="dv">2</span>)</code></pre>
+<pre><code>## [1] &quot;Ting&quot; &quot;Sara&quot;</code></pre>
+</div>
+<div id="completely-randomized-order-of-ms-runs" class="section level4">
+<h4><span class="header-section-number">1.1.1.2</span> Completely randomized order of MS runs</h4>
+<p>Let’s load <code>iprg</code> data first.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&#39;./data/iprg.rda&#39;</span>)</code></pre>
+<p>We can also create a random order using all elements of iPRG
+dataset. Again, we can achieve this using <code>sample</code>, asking for exactly
+the amount of samples in the subset. This time, each repetition gives
+us a different order of the complete set.</p>
+<pre class="sourceCode r"><code class="sourceCode r">msrun &lt;-<span class="st"> </span><span class="kw">unique</span>(iprg<span class="op">$</span>Run)
+msrun</code></pre>
+<pre><code>##  [1] &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample1_C.raw&quot;
+##  [3] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample2_A.raw&quot;
+##  [5] &quot;JD_06232014_sample2_B.raw&quot; &quot;JD_06232014_sample2_C.raw&quot;
+##  [7] &quot;JD_06232014_sample3_A.raw&quot; &quot;JD_06232014_sample3_B.raw&quot;
+##  [9] &quot;JD_06232014_sample3_C.raw&quot; &quot;JD_06232014_sample4_B.raw&quot;
+## [11] &quot;JD_06232014_sample4_C.raw&quot; &quot;JD_06232014_sample4-A.raw&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## randomize order among all 12 MS runs</span>
+<span class="kw">sample</span>(msrun, <span class="kw">length</span>(msrun))</code></pre>
+<pre><code>##  [1] &quot;JD_06232014_sample4_C.raw&quot; &quot;JD_06232014_sample3_A.raw&quot;
+##  [3] &quot;JD_06232014_sample4-A.raw&quot; &quot;JD_06232014_sample4_B.raw&quot;
+##  [5] &quot;JD_06232014_sample2_C.raw&quot; &quot;JD_06232014_sample1_C.raw&quot;
+##  [7] &quot;JD_06232014_sample2_A.raw&quot; &quot;JD_06232014_sample3_C.raw&quot;
+##  [9] &quot;JD_06232014_sample3_B.raw&quot; &quot;JD_06232014_sample1-A.raw&quot;
+## [11] &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample2_B.raw&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## different order will be shown.</span>
+<span class="kw">sample</span>(msrun, <span class="kw">length</span>(msrun))</code></pre>
+<pre><code>##  [1] &quot;JD_06232014_sample1_B.raw&quot; &quot;JD_06232014_sample3_A.raw&quot;
+##  [3] &quot;JD_06232014_sample1-A.raw&quot; &quot;JD_06232014_sample2_A.raw&quot;
+##  [5] &quot;JD_06232014_sample3_B.raw&quot; &quot;JD_06232014_sample1_C.raw&quot;
+##  [7] &quot;JD_06232014_sample2_B.raw&quot; &quot;JD_06232014_sample3_C.raw&quot;
+##  [9] &quot;JD_06232014_sample4_C.raw&quot; &quot;JD_06232014_sample4-A.raw&quot;
+## [11] &quot;JD_06232014_sample2_C.raw&quot; &quot;JD_06232014_sample4_B.raw&quot;</code></pre>
+</div>
+<div id="randomized-block-design" class="section level4">
+<h4><span class="header-section-number">1.1.1.3</span> Randomized block design</h4>
+<ul>
+<li><p>Allow to remove known sources of variability that you are not
+interested in.</p></li>
+<li><p>Group conditions into blocks such that the conditions in a block are
+as similar as possible.</p></li>
+<li><p>Randomly assign samples with a block.</p></li>
+</ul>
+<p>This particular dataset contains a total of 12 MS runs across 4
+conditions, 3 technical replicates per condition. Using the
+<code>block.random</code> function in the <code>psych</code> package, we can achieve
+randomized block designs! <code>block.random</code> function makes random assignment of <code>n</code> subjects with an equal number in all of <code>N</code> conditions.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;psych&quot;</span>) <span class="co">## load the psych package</span>
+
+msrun &lt;-<span class="st"> </span><span class="kw">unique</span>(iprg[, <span class="kw">c</span>(<span class="st">&#39;Condition&#39;</span>,<span class="st">&#39;Run&#39;</span>)])
+msrun</code></pre>
+<pre><code>##     Condition                       Run
+## 1  Condition1 JD_06232014_sample1_B.raw
+## 2  Condition1 JD_06232014_sample1_C.raw
+## 3  Condition1 JD_06232014_sample1-A.raw
+## 4  Condition2 JD_06232014_sample2_A.raw
+## 5  Condition2 JD_06232014_sample2_B.raw
+## 6  Condition2 JD_06232014_sample2_C.raw
+## 7  Condition3 JD_06232014_sample3_A.raw
+## 8  Condition3 JD_06232014_sample3_B.raw
+## 9  Condition3 JD_06232014_sample3_C.raw
+## 10 Condition4 JD_06232014_sample4_B.raw
+## 11 Condition4 JD_06232014_sample4_C.raw
+## 12 Condition4 JD_06232014_sample4-A.raw</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## 4 Conditions of 12 MS runs randomly ordered</span>
+<span class="kw">block.random</span>(<span class="dt">n =</span> <span class="dv">12</span>, <span class="kw">c</span>(<span class="dt">Condition =</span> <span class="dv">4</span>))</code></pre>
+<pre><code>##     blocks Condition
+## S1       1         4
+## S2       1         1
+## S3       1         2
+## S4       1         3
+## S5       2         2
+## S6       2         4
+## S7       2         1
+## S8       2         3
+## S9       3         4
+## S10      3         1
+## S11      3         3
+## S12      3         2</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">block.random</span>(<span class="dt">n =</span> <span class="dv">12</span>, <span class="kw">c</span>(<span class="dt">Condition =</span> <span class="dv">4</span>, <span class="dt">BioReplicate=</span><span class="dv">3</span>))</code></pre>
+<pre><code>##     blocks Condition BioReplicate
+## S1       1         3            3
+## S2       1         1            3
+## S3       1         1            2
+## S4       1         4            2
+## S5       1         1            1
+## S6       1         3            2
+## S7       1         2            2
+## S8       1         2            3
+## S9       1         4            3
+## S10      1         2            1
+## S11      1         3            1
+## S12      1         4            1</code></pre>
+</div>
+</div>
+<div id="basic-statistical-summaries" class="section level3">
+<h3><span class="header-section-number">1.1.2</span> Basic statistical summaries</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<div id="calculate-simple-statistics" class="section level4">
+<h4><span class="header-section-number">1.1.2.1</span> Calculate simple statistics</h4>
+<p>Let’s start data with one protein as an example and calculate the
+mean, standard deviation, standard error of the mean across all
+replicates per condition. We then store all the computed statistics
+into a single summary data frame for easy access.</p>
+<p>We can use the <code>aggregate</code> function to compute summary statistics. <code>aggregate</code> splits the data into subsets, computes summary statistics for each, and returns the result in a convenient form.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check what proteins are in dataset, show all protein names</span>
+<span class="kw">head</span>(<span class="kw">unique</span>(iprg<span class="op">$</span>Protein))</code></pre>
+<pre><code>## [1] &quot;sp|D6VTK4|STE2_YEAST&quot;  &quot;sp|O13297|CET1_YEAST&quot;  &quot;sp|O13329|FOB1_YEAST&quot; 
+## [4] &quot;sp|O13539|THP2_YEAST&quot;  &quot;sp|O13547|CCW14_YEAST&quot; &quot;sp|O13563|RPN13_YEAST&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(<span class="kw">unique</span>(iprg<span class="op">$</span>Protein))</code></pre>
+<pre><code>## [1] 3027</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#distinct(iprg, Protein)</span>
+<span class="kw">n_distinct</span>(iprg<span class="op">$</span>Protein)</code></pre>
+<pre><code>## [1] 3027</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Let&#39;s start with one protein, named &quot;sp|P44015|VAC2_YEAST&quot;</span>
+oneproteindata &lt;-<span class="st"> </span>iprg[iprg<span class="op">$</span>Protein <span class="op">==</span><span class="st"> &quot;sp|P44015|VAC2_YEAST&quot;</span>, ]
+
+<span class="co"># there are 12 rows in oneproteindata</span>
+oneproteindata</code></pre>
+<pre><code>## # A tibble: 12 x 7
+##    Protein Log2Intensity Run   Condition BioReplicate Intensity
+##    &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+##  1 sp|P44…          26.3 JD_0… Conditio…            1 82714388.
+##  2 sp|P44…          26.1 JD_0… Conditio…            1 72749239.
+##  3 sp|P44…          26.3 JD_0… Conditio…            1 82100518.
+##  4 sp|P44…          25.8 JD_0… Conditio…            2 59219741.
+##  5 sp|P44…          26.1 JD_0… Conditio…            2 72690802.
+##  6 sp|P44…          26.1 JD_0… Conditio…            2 71180513.
+##  7 sp|P44…          23.1 JD_0… Conditio…            3  9295260.
+##  8 sp|P44…          23.3 JD_0… Conditio…            3 10505591.
+##  9 sp|P44…          23.3 JD_0… Conditio…            3 10295788.
+## 10 sp|P44…          20.9 JD_0… Conditio…            4  2019205.
+## 11 sp|P44…          21.7 JD_0… Conditio…            4  3440629.
+## 12 sp|P44…          20.3 JD_0… Conditio…            4  1248781.
+## # … with 1 more variable: TechReplicate &lt;chr&gt;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># with dplyr</span>
+oneproteindata.bcp &lt;-<span class="st"> </span><span class="kw">filter</span>(iprg, Protein <span class="op">==</span><span class="st"> &quot;sp|P44015|VAC2_YEAST&quot;</span>)
+oneproteindata.bcp</code></pre>
+<pre><code>## # A tibble: 12 x 7
+##    Protein Log2Intensity Run   Condition BioReplicate Intensity
+##    &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+##  1 sp|P44…          26.3 JD_0… Conditio…            1 82714388.
+##  2 sp|P44…          26.1 JD_0… Conditio…            1 72749239.
+##  3 sp|P44…          26.3 JD_0… Conditio…            1 82100518.
+##  4 sp|P44…          25.8 JD_0… Conditio…            2 59219741.
+##  5 sp|P44…          26.1 JD_0… Conditio…            2 72690802.
+##  6 sp|P44…          26.1 JD_0… Conditio…            2 71180513.
+##  7 sp|P44…          23.1 JD_0… Conditio…            3  9295260.
+##  8 sp|P44…          23.3 JD_0… Conditio…            3 10505591.
+##  9 sp|P44…          23.3 JD_0… Conditio…            3 10295788.
+## 10 sp|P44…          20.9 JD_0… Conditio…            4  2019205.
+## 11 sp|P44…          21.7 JD_0… Conditio…            4  3440629.
+## 12 sp|P44…          20.3 JD_0… Conditio…            4  1248781.
+## # … with 1 more variable: TechReplicate &lt;chr&gt;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># If you want to see more details,</span>
+?aggregate</code></pre>
+</div>
+<div id="calculate-mean-per-groups" class="section level4">
+<h4><span class="header-section-number">1.1.2.2</span> Calculate mean per groups</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## splits &#39;oneproteindata&#39; into subsets by &#39;Condition&#39;,</span>
+<span class="co">## then, compute &#39;FUN=mean&#39; of &#39;log2Int&#39;</span>
+sub.mean &lt;-<span class="st"> </span><span class="kw">aggregate</span>(Log2Intensity <span class="op">~</span><span class="st"> </span>Condition,
+                      <span class="dt">data =</span> oneproteindata,
+                      <span class="dt">FUN =</span> mean)
+sub.mean</code></pre>
+<pre><code>##    Condition Log2Intensity
+## 1 Condition1      26.23632
+## 2 Condition2      26.00661
+## 3 Condition3      23.25609
+## 4 Condition4      20.97056</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># with dplyr</span>
+sub.mean.bcp &lt;-<span class="st"> </span>oneproteindata <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(Condition) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">mean=</span><span class="kw">mean</span>(Log2Intensity))
+
+sub.mean.bcp</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Condition   mean
+##   &lt;chr&gt;      &lt;dbl&gt;
+## 1 Condition1  26.2
+## 2 Condition2  26.0
+## 3 Condition3  23.3
+## 4 Condition4  21.0</code></pre>
+</div>
+<div id="calculate-sd-standard-deviation-per-groups" class="section level4">
+<h4><span class="header-section-number">1.1.2.3</span> Calculate SD (standard deviation) per groups</h4>
+<p><span class="math display">\[ s = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2} \]</span></p>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Using the <code>aggregate</code> function above, calculate the standard
+deviation, by applying the <code>median</code> function.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## The same as mean calculation above. &#39;FUN&#39; is changed to &#39;sd&#39;.</span>
+sub.median &lt;-<span class="st"> </span><span class="kw">aggregate</span>(Log2Intensity <span class="op">~</span><span class="st"> </span>Condition,
+                    <span class="dt">data =</span> oneproteindata, <span class="dt">FUN =</span> median)
+sub.median</code></pre>
+<pre><code>##    Condition Log2Intensity
+## 1 Condition1      26.29089
+## 2 Condition2      26.08498
+## 3 Condition3      23.29555
+## 4 Condition4      20.94536</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># with dplyr</span>
+sub.median.bcp &lt;-<span class="st"> </span>oneproteindata <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(Condition) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">median=</span><span class="kw">median</span>(Log2Intensity))
+
+sub.median.bcp</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Condition  median
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 Condition1   26.3
+## 2 Condition2   26.1
+## 3 Condition3   23.3
+## 4 Condition4   20.9</code></pre>
+</details>
+<blockquote>
+<p>Using the <code>aggregate</code> function above, calculate the standard
+deviation, by applying the <code>sd</code> function.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## The same as mean calculation above. &#39;FUN&#39; is changed to &#39;sd&#39;.</span>
+sub.sd &lt;-<span class="st"> </span><span class="kw">aggregate</span>(Log2Intensity <span class="op">~</span><span class="st"> </span>Condition,
+                    <span class="dt">data =</span> oneproteindata, <span class="dt">FUN =</span> sd)
+sub.sd</code></pre>
+<pre><code>##    Condition Log2Intensity
+## 1 Condition1    0.10396539
+## 2 Condition2    0.16268179
+## 3 Condition3    0.09467798
+## 4 Condition4    0.73140174</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># with dplyr</span>
+sub.sd.bcp &lt;-<span class="st"> </span>oneproteindata <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(Condition) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">sd =</span> <span class="kw">sd</span>(Log2Intensity))
+
+sub.sd.bcp</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Condition      sd
+##   &lt;chr&gt;       &lt;dbl&gt;
+## 1 Condition1 0.104 
+## 2 Condition2 0.163 
+## 3 Condition3 0.0947
+## 4 Condition4 0.731</code></pre>
+</details>
+</div>
+<div id="count-the-number-of-observation-per-groups" class="section level4">
+<h4><span class="header-section-number">1.1.2.4</span> Count the number of observation per groups</h4>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Using the <code>aggregate</code> function above, count the number of
+observations per group with the <code>length</code> function.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## The same as mean calculation. &#39;FUN&#39; is changed &#39;length&#39;.</span>
+sub.len &lt;-<span class="st"> </span><span class="kw">aggregate</span>(Log2Intensity <span class="op">~</span><span class="st"> </span>Condition,
+                     <span class="dt">data =</span> oneproteindata,
+                     <span class="dt">FUN =</span> length)
+sub.len</code></pre>
+<pre><code>##    Condition Log2Intensity
+## 1 Condition1             3
+## 2 Condition2             3
+## 3 Condition3             3
+## 4 Condition4             3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># with dplyr</span>
+sub.len.bcp &lt;-<span class="st"> </span>oneproteindata <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(Condition) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">count =</span> <span class="kw">n</span>())
+
+sub.len.bcp</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##   Condition  count
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 Condition1     3
+## 2 Condition2     3
+## 3 Condition3     3
+## 4 Condition4     3</code></pre>
+</details>
+</div>
+<div id="calculate-se-standard-error-of-mean-per-groups" class="section level4">
+<h4><span class="header-section-number">1.1.2.5</span> Calculate SE (standard error of mean) per groups</h4>
+<p><span class="math display">\[ SE = \sqrt{\frac{s^2}{n}} \]</span></p>
+<pre class="sourceCode r"><code class="sourceCode r">sub.se &lt;-<span class="st"> </span><span class="kw">sqrt</span>(sub.sd<span class="op">$</span>Log2Intensity<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span>sub.len<span class="op">$</span>Log2Intensity)
+sub.se</code></pre>
+<pre><code>## [1] 0.06002444 0.09392438 0.05466236 0.42227499</code></pre>
+<p>We can now make the summary table including the results above (mean,
+sd, se and length).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## paste0 : concatenate vectors after convering to character.</span>
+(grp &lt;-<span class="st"> </span><span class="kw">paste0</span>(<span class="st">&quot;Condition&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>))</code></pre>
+<pre><code>## [1] &quot;Condition1&quot; &quot;Condition2&quot; &quot;Condition3&quot; &quot;Condition4&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## It is equivalent to paste(&quot;Condition&quot;, 1:4, sep=&quot;&quot;)</span>
+summaryresult &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Group =</span> grp,
+                            <span class="dt">mean =</span> sub.mean<span class="op">$</span>Log2Intensity,
+                            <span class="dt">sd =</span> sub.sd<span class="op">$</span>Log2Intensity,
+                            <span class="dt">se =</span> sub.se,
+                            <span class="dt">length =</span> sub.len<span class="op">$</span>Log2Intensity)
+summaryresult</code></pre>
+<pre><code>##        Group     mean         sd         se length
+## 1 Condition1 26.23632 0.10396539 0.06002444      3
+## 2 Condition2 26.00661 0.16268179 0.09392438      3
+## 3 Condition3 23.25609 0.09467798 0.05466236      3
+## 4 Condition4 20.97056 0.73140174 0.42227499      3</code></pre>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Make the same table as summaryresult with dplyr package.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult.dplyr &lt;-<span class="st"> </span>oneproteindata <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">group_by</span>(Condition) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">summarise</span>(<span class="dt">mean =</span> <span class="kw">mean</span>(Log2Intensity),
+              <span class="dt">sd =</span> <span class="kw">sd</span>(Log2Intensity),
+              <span class="dt">length =</span> <span class="kw">n</span>())
+summaryresult.dplyr &lt;-<span class="st"> </span><span class="kw">mutate</span>(summaryresult.dplyr, <span class="dt">se=</span><span class="kw">sqrt</span>(sd<span class="op">^</span><span class="dv">2</span> <span class="op">/</span><span class="st"> </span>length))
+
+summaryresult.dplyr</code></pre>
+<pre><code>## # A tibble: 4 x 5
+##   Condition   mean     sd length     se
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt;  &lt;dbl&gt;
+## 1 Condition1  26.2 0.104       3 0.0600
+## 2 Condition2  26.0 0.163       3 0.0939
+## 3 Condition3  23.3 0.0947      3 0.0547
+## 4 Condition4  21.0 0.731       3 0.422</code></pre>
+</details>
+</div>
+</div>
+<div id="visualization-with-error-bars-for-descriptive-purpose" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Visualization with error bars for descriptive purpose</h3>
+<p><em>error bars</em> can have a variety of meanings or conclusions if what
+they represent is not precisely specified. Below we provide some
+examples of which types of error bars are common. We’re using the
+summary of protein <code>sp|P44015|VAC2_YEAST</code> from the previous section
+and the <code>ggplot2</code> package as it provides a convenient way to make
+easily adaptable plots.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)</code></pre>
+<pre><code>## Registered S3 methods overwritten by &#39;ggplot2&#39;:
+##   method         from 
+##   [.quosures     rlang
+##   c.quosures     rlang
+##   print.quosures rlang</code></pre>
+<pre><code>## 
+## Attaching package: &#39;ggplot2&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:psych&#39;:
+## 
+##     %+%, alpha</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># means without any errorbar</span>
+p &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Group, <span class="dt">y =</span> mean, <span class="dt">colour =</span> Group),
+            <span class="dt">data =</span> summaryresult)<span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">3</span>)
+p</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>Let’s change a number of visual properties to make the plot more attractive.</p>
+<ul>
+<li>Let’s change the labels of x-axis and y-axis and title: <code>labs(title=&quot;Mean&quot;, x=&quot;Condition&quot;, y='Log2(Intensity)')</code></li>
+<li>Let’s change background color for white: <code>theme_bw()</code></li>
+<li>Let’s change size or color of labels of axes and title, text of
+x-axis by using a <em>theme</em></li>
+<li>Let’s change the position of legend (use <code>'none'</code> to remove it)</li>
+<li>Let’s make the box for legend</li>
+<li>Let’s remove the box for legend key.</li>
+</ul>
+<p>See also this
+<a href="http://ggplot2.tidyverse.org/reference/theme.html">post</a> for options of <em>theme</em>,
+<a href="http://ggplot2.tidyverse.org/reference/ggtheme.html">post</a> for complete theme.</p>
+<pre class="sourceCode r"><code class="sourceCode r">p2 &lt;-<span class="st"> </span>p <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Mean&quot;</span>, <span class="dt">x =</span> <span class="st">&quot;Group&quot;</span>, <span class="dt">y =</span> <span class="st">&#39;Log2(Intensity)&#39;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">colour =</span> <span class="st">&quot;darkblue&quot;</span>),
+          <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">15</span>),
+          <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">15</span>),
+          <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size =</span> <span class="dv">13</span>),
+          <span class="dt">legend.position =</span> <span class="st">&#39;bottom&#39;</span>,
+          <span class="dt">legend.background =</span> <span class="kw">element_rect</span>(<span class="dt">colour =</span> <span class="st">&#39;black&#39;</span>),
+          <span class="dt">legend.key =</span> <span class="kw">element_rect</span>(<span class="dt">colour =</span> <span class="st">&#39;white&#39;</span>))
+p2</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Let’s now add the <strong>standard deviation</strong>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean with SD</span>
+p2 <span class="op">+</span><span class="st"> </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymax =</span> mean <span class="op">+</span><span class="st"> </span>sd, <span class="dt">ymin =</span> mean <span class="op">-</span><span class="st"> </span>sd), <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">      </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Mean with SD&quot;</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Add the <strong>standard error of the mean</strong>. Which one is smaller?</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean with SE</span>
+p2 <span class="op">+</span><span class="st"> </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymax =</span> mean <span class="op">+</span><span class="st"> </span>se, <span class="dt">ymin=</span>mean <span class="op">-</span><span class="st"> </span>se), <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Mean with SE&quot;</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## The SE is narrow than the SD!</span></code></pre>
+</details>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Add the <strong>standard error of the mean</strong> with black color.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean with SE</span>
+p2 <span class="op">+</span><span class="st"> </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymax =</span> mean <span class="op">+</span><span class="st"> </span>se, <span class="dt">ymin=</span>mean <span class="op">-</span><span class="st"> </span>se), <span class="dt">width =</span> <span class="fl">0.1</span>, <span class="dt">color=</span><span class="st">&#39;black&#39;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Mean with SE&quot;</span>)</code></pre>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+</details>
+</div>
+<div id="working-with-statistical-distributions" class="section level3">
+<h3><span class="header-section-number">1.1.4</span> Working with statistical distributions</h3>
+<p>For each statistical distribution, we have function to compute</p>
+<ul>
+<li>density</li>
+<li>distribution function</li>
+<li>quantile function</li>
+<li>random generation</li>
+</ul>
+<p>For the normale distribution <code>norm</code>, these are respectively</p>
+<ul>
+<li><code>dnorm</code></li>
+<li><code>pnorm</code></li>
+<li><code>qnorm</code></li>
+<li><code>rnorm</code></li>
+</ul>
+<p>Let’s start by sampling 1000000 values from a normal distribution <span class="math inline">\(N(0, 1)\)</span>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">xn &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="fl">1e6</span>)
+<span class="kw">hist</span>(xn, <span class="dt">freq =</span> <span class="ot">FALSE</span>)
+<span class="kw">rug</span>(xn)
+<span class="kw">lines</span>(<span class="kw">density</span>(xn), <span class="dt">lwd =</span> <span class="dv">2</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<p>By definition, the area under the density curve is 1. The area at the
+left of 0, 1, and 2 are respectively:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">0</span>)</code></pre>
+<pre><code>## [1] 0.5</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">1</span>)</code></pre>
+<pre><code>## [1] 0.8413447</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">2</span>)</code></pre>
+<pre><code>## [1] 0.9772499</code></pre>
+<p>To ask the inverse question, we use the quantile function. The obtain
+0.5, 0.8413447 and 0.9772499 of our distribution, we need means
+of:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.5</span>)</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">pnorm</span>(<span class="dv">1</span>))</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="kw">pnorm</span>(<span class="dv">2</span>))</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qnorm</span>(<span class="fl">0.05</span>)</code></pre>
+<pre><code>## [1] -1.644854</code></pre>
+<p>Finally, the density function gives us the <em>height</em> at which we are
+for a given mean:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(xn, <span class="dt">freq =</span> <span class="ot">FALSE</span>)
+<span class="kw">lines</span>(<span class="kw">density</span>(xn), <span class="dt">lwd =</span> <span class="dv">2</span>)
+<span class="kw">points</span>(<span class="dv">0</span>, <span class="kw">dnorm</span>(<span class="dv">0</span>), <span class="dt">pch =</span> <span class="dv">19</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">points</span>(<span class="dv">1</span>, <span class="kw">dnorm</span>(<span class="dv">1</span>), <span class="dt">pch =</span> <span class="dv">1</span>, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)
+<span class="kw">points</span>(<span class="dv">2</span>, <span class="kw">dnorm</span>(<span class="dv">2</span>), <span class="dt">pch =</span> <span class="dv">4</span>, <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>)</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="calculate-the-confidence-interval" class="section level3">
+<h3><span class="header-section-number">1.1.5</span> Calculate the confidence interval</h3>
+<p>Now that we’ve covered the standard error of the mean and the standard
+deviation, let’s investigate how we can add custom confidence
+intervals (CI) for our measurement of the mean. We’ll add these CI’s
+to the summary results we previously stored for protein
+<code>sp|P44015|VAC2_YEAST</code>.</p>
+<p>Confidence interval:</p>
+<p><span class="math display">\[\mbox{mean} \pm (SE \times \frac{\alpha}{2} ~ \mbox{quantile of t distribution})\]</span></p>
+<p>To calculate the 95% confident interval, we need to be careful and set
+the quantile for two-sided. We need to divide by two for error. For
+example, 95% confidence interval, right tail is 2.5% and left tail is
+2.5%.</p>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult<span class="op">$</span>ciw.lower<span class="fl">.95</span> &lt;-<span class="st"> </span>summaryresult<span class="op">$</span>mean <span class="op">-</span>
+<span class="st">    </span><span class="kw">qt</span>(<span class="fl">0.975</span>, summaryresult<span class="op">$</span>len <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span>summaryresult<span class="op">$</span>se
+summaryresult<span class="op">$</span>ciw.upper<span class="fl">.95</span> &lt;-<span class="st"> </span>summaryresult<span class="op">$</span>mean <span class="op">+</span>
+<span class="st">    </span><span class="kw">qt</span>(<span class="fl">0.975</span>, summaryresult<span class="op">$</span>len <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span>summaryresult<span class="op">$</span>se
+summaryresult</code></pre>
+<pre><code>##        Group     mean         sd         se length ciw.lower.95
+## 1 Condition1 26.23632 0.10396539 0.06002444      3     25.97805
+## 2 Condition2 26.00661 0.16268179 0.09392438      3     25.60248
+## 3 Condition3 23.25609 0.09467798 0.05466236      3     23.02090
+## 4 Condition4 20.97056 0.73140174 0.42227499      3     19.15366
+##   ciw.upper.95
+## 1     26.49458
+## 2     26.41073
+## 3     23.49128
+## 4     22.78746</code></pre>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult.dplyr <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">ciw.lower.95 =</span> mean <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, length<span class="dv">-1</span>)<span class="op">*</span>se,
+                               <span class="dt">ciw.upper.95 =</span> mean <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.975</span>, length<span class="dv">-1</span>)<span class="op">*</span>se)</code></pre>
+<pre><code>## # A tibble: 4 x 7
+##   Condition   mean     sd length     se ciw.lower.95 ciw.upper.95
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt;  &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;
+## 1 Condition1  26.2 0.104       3 0.0600         26.0         26.5
+## 2 Condition2  26.0 0.163       3 0.0939         25.6         26.4
+## 3 Condition3  23.3 0.0947      3 0.0547         23.0         23.5
+## 4 Condition4  21.0 0.731       3 0.422          19.2         22.8</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult.dplyr</code></pre>
+<pre><code>## # A tibble: 4 x 5
+##   Condition   mean     sd length     se
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt;  &lt;dbl&gt;
+## 1 Condition1  26.2 0.104       3 0.0600
+## 2 Condition2  26.0 0.163       3 0.0939
+## 3 Condition3  23.3 0.0947      3 0.0547
+## 4 Condition4  21.0 0.731       3 0.422</code></pre>
+</details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean with 95% two-sided confidence interval</span>
+<span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Group, <span class="dt">y =</span> mean, <span class="dt">colour =</span> Group),
+       <span class="dt">data =</span> summaryresult) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymax =</span> ciw.upper<span class="fl">.95</span>, <span class="dt">ymin =</span> ciw.lower<span class="fl">.95</span>), <span class="dt">width =</span> <span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Mean with 95% confidence interval&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Condition&quot;</span>, <span class="dt">y=</span><span class="st">&#39;Log2(Intensity)&#39;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_bw</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">25</span>, <span class="dt">colour=</span><span class="st">&quot;darkblue&quot;</span>),
+          <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+          <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+          <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">13</span>),
+          <span class="dt">legend.position =</span> <span class="st">&#39;bottom&#39;</span>,
+          <span class="dt">legend.background =</span> <span class="kw">element_rect</span>(<span class="dt">colour =</span> <span class="st">&#39;black&#39;</span>),
+          <span class="dt">legend.key =</span> <span class="kw">element_rect</span>(<span class="dt">colour=</span><span class="st">&#39;white&#39;</span>))</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<blockquote>
+<p><strong>Challenges</strong></p>
+<p>Replicate the above for the 99% two-sided confidence interval.</p>
+</blockquote>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mean with 99% two-sided confidence interval</span>
+summaryresult<span class="op">$</span>ciw.lower<span class="fl">.99</span> &lt;-<span class="st"> </span>summaryresult<span class="op">$</span>mean <span class="op">-</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.995</span>,summaryresult<span class="op">$</span>len<span class="dv">-1</span>) <span class="op">*</span><span class="st"> </span>summaryresult<span class="op">$</span>se
+summaryresult<span class="op">$</span>ciw.upper<span class="fl">.99</span> &lt;-<span class="st"> </span>summaryresult<span class="op">$</span>mean <span class="op">+</span><span class="st"> </span><span class="kw">qt</span>(<span class="fl">0.995</span>,summaryresult<span class="op">$</span>len<span class="dv">-1</span>) <span class="op">*</span><span class="st"> </span>summaryresult<span class="op">$</span>se
+summaryresult</code></pre>
+<pre><code>##        Group     mean         sd         se length ciw.lower.95
+## 1 Condition1 26.23632 0.10396539 0.06002444      3     25.97805
+## 2 Condition2 26.00661 0.16268179 0.09392438      3     25.60248
+## 3 Condition3 23.25609 0.09467798 0.05466236      3     23.02090
+## 4 Condition4 20.97056 0.73140174 0.42227499      3     19.15366
+##   ciw.upper.95 ciw.lower.99 ciw.upper.99
+## 1     26.49458     25.64058     26.83205
+## 2     26.41073     25.07442     26.93879
+## 3     23.49128     22.71357     23.79860
+## 4     22.78746     16.77955     25.16157</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> Group, <span class="dt">y =</span> mean, <span class="dt">colour =</span> Group),
+       <span class="dt">data =</span> summaryresult) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_errorbar</span>(<span class="kw">aes</span>(<span class="dt">ymax =</span> ciw.upper<span class="fl">.99</span>, <span class="dt">ymin=</span>ciw.lower<span class="fl">.99</span>), <span class="dt">width=</span><span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&quot;Mean with 99% confidence interval&quot;</span>, <span class="dt">x=</span><span class="st">&quot;Condition&quot;</span>, <span class="dt">y=</span><span class="st">&#39;Log2(Intensity)&#39;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_bw</span>()<span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">25</span>, <span class="dt">colour=</span><span class="st">&quot;darkblue&quot;</span>),
+          <span class="dt">axis.title.x =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+          <span class="dt">axis.title.y =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">15</span>),
+          <span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">13</span>),
+          <span class="dt">legend.position =</span> <span class="st">&#39;bottom&#39;</span>,
+          <span class="dt">legend.background =</span> <span class="kw">element_rect</span>(<span class="dt">colour=</span><span class="st">&#39;black&#39;</span>),
+          <span class="dt">legend.key =</span> <span class="kw">element_rect</span>(<span class="dt">colour=</span><span class="st">&#39;white&#39;</span>))</code></pre>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-30-1.png" width="672" />
+</details>
+<div id="some-comments" class="section level4 unnumbered">
+<h4>Some comments</h4>
+<ul>
+<li><p>Error bars with SD and CI are overlapping between groups!</p></li>
+<li><p>Error bars for the SD show the spread of the population while error
+bars based on SE reflect the uncertainty in the mean and depend on
+the sample size.</p></li>
+<li><p>Confidence intervals of <code>n</code> on the other hand mean that the
+intervals capture the population mean <code>n</code> percent of the time.</p></li>
+<li><p>When the sample size increases, CI and SE are getting closer to each
+other.</p></li>
+</ul>
+</div>
+</div>
+<div id="saving-our-results" class="section level3">
+<h3><span class="header-section-number">1.1.6</span> Saving our results</h3>
+<p>We have two objects that contain all the information that we have
+generated so far:</p>
+<ul>
+<li>The <code>summaryresults</code> and <code>summaryresults.dplyr</code> objects, that contains all the summary
+statistics.</li>
+</ul>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(summaryresult, <span class="dt">file =</span> <span class="st">&quot;./data/summaryresults.rda&quot;</span>)
+<span class="kw">save</span>(summaryresult.dplyr, <span class="dt">file =</span> <span class="st">&quot;./data/summaryresults.dplyr.rda&quot;</span>)</code></pre>
+<p>We can also save the summary result as a <code>csv</code> file using the
+<code>write.csv</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(sumamryresult, <span class="dt">file =</span> <span class="st">&quot;./data/summary.csv&quot;</span>)</code></pre>
+<p><strong>Tip</strong>: Exporting to csv is useful to share your work with
+collaborators that do not use R, but for many continous work in R, to
+assure data validity accords platforms, the best format is <code>rda</code>.</p>
+</div>
+</div>
+<div id="statistical-hypothesis-test" class="section level2">
+<h2><span class="header-section-number">1.2</span> Statistical hypothesis test</h2>
+<p>First, we are going to prepare the session for further analyses.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="st">&quot;./data/summaryresults.rda&quot;</span>)
+<span class="kw">load</span>(<span class="st">&quot;./data/iprg.rda&quot;</span>)</code></pre>
+<div id="two-sample-t-test-for-one-protein-with-one-feature" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Two sample t-test for one protein with one feature</h3>
+<p>Now, we’ll perform a t-test whether protein <code>sp|P44015|VAC2_YEAST</code> has
+a change in abundance between Condition 1 and Condition 2.</p>
+<div id="hypothesis" class="section level4 unnumbered">
+<h4>Hypothesis</h4>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: no change in abundance, mean(Condition1) - mean(Condition2) = 0</li>
+<li><span class="math inline">\(H_a\)</span>: change in abundance, mean(Condition1) - mean(Condition 2) <span class="math inline">\(\neq\)</span> 0</li>
+</ul>
+</div>
+<div id="statistics" class="section level4 unnumbered">
+<h4>Statistics</h4>
+<ul>
+<li>Observed <span class="math inline">\(t = \frac{\mbox{difference of group means}}{\mbox{estimate of variation}} = \frac{(mean_{1} - mean_{2})}{SE} \sim t_{\alpha/2, df}\)</span></li>
+<li>Standard error, <span class="math inline">\(SE=\sqrt{\frac{s_{1}^2}{n_{1}} + \frac{s_{2}^2}{n_{2}}}\)</span></li>
+</ul>
+<p>with</p>
+<ul>
+<li><span class="math inline">\(n_{i}\)</span>: number of replicates</li>
+<li><span class="math inline">\(s_{i}^2 = \frac{1}{n_{i}-1} \sum (Y_{ij} - \bar{Y_{i \cdot}})^2\)</span>: sample variance</li>
+</ul>
+</div>
+<div id="data-preparation" class="section level4 unnumbered">
+<h4>Data preparation</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## Let&#39;s start with one protein, named &quot;sp|P44015|VAC2_YEAST&quot;</span>
+oneproteindata &lt;-<span class="st"> </span>iprg[iprg<span class="op">$</span>Protein <span class="op">==</span><span class="st"> &quot;sp|P44015|VAC2_YEAST&quot;</span>, ]
+
+<span class="co">## Then, get two conditions only, because t.test only works for two groups (conditions).</span>
+oneproteindata.condition12 &lt;-<span class="st"> </span>oneproteindata[oneproteindata<span class="op">$</span>Condition <span class="op">%in%</span>
+<span class="st">                                             </span><span class="kw">c</span>(<span class="st">&#39;Condition1&#39;</span>, <span class="st">&#39;Condition2&#39;</span>), ]
+oneproteindata.condition12</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Protein Log2Intensity Run   Condition BioReplicate Intensity
+##   &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+## 1 sp|P44…          26.3 JD_0… Conditio…            1 82714388.
+## 2 sp|P44…          26.1 JD_0… Conditio…            1 72749239.
+## 3 sp|P44…          26.3 JD_0… Conditio…            1 82100518.
+## 4 sp|P44…          25.8 JD_0… Conditio…            2 59219741.
+## 5 sp|P44…          26.1 JD_0… Conditio…            2 72690802.
+## 6 sp|P44…          26.1 JD_0… Conditio…            2 71180513.
+## # … with 1 more variable: TechReplicate &lt;chr&gt;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(oneproteindata.condition12[, <span class="kw">c</span>(<span class="st">&quot;Condition&quot;</span>, <span class="st">&quot;BioReplicate&quot;</span>)])</code></pre>
+<pre><code>##             BioReplicate
+## Condition    1 2
+##   Condition1 3 0
+##   Condition2 0 3</code></pre>
+<details>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## with dplyr</span>
+<span class="co">## Let&#39;s start with one protein, named &quot;sp|P44015|VAC2_YEAST&quot;</span>
+oneproteindata &lt;-<span class="st"> </span><span class="kw">filter</span>(iprg, Protein <span class="op">==</span><span class="st"> &quot;sp|P44015|VAC2_YEAST&quot;</span>)
+
+<span class="co">## Then, get two conditions only, because t.test only works for two groups (conditions).</span>
+oneproteindata.subset &lt;-<span class="st"> </span><span class="kw">filter</span>(oneproteindata,
+                                Condition <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Condition1&#39;</span>, <span class="st">&#39;Condition2&#39;</span>))
+oneproteindata.subset</code></pre>
+<pre><code>## # A tibble: 6 x 7
+##   Protein Log2Intensity Run   Condition BioReplicate Intensity
+##   &lt;chr&gt;           &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+## 1 sp|P44…          26.3 JD_0… Conditio…            1 82714388.
+## 2 sp|P44…          26.1 JD_0… Conditio…            1 72749239.
+## 3 sp|P44…          26.3 JD_0… Conditio…            1 82100518.
+## 4 sp|P44…          25.8 JD_0… Conditio…            2 59219741.
+## 5 sp|P44…          26.1 JD_0… Conditio…            2 72690802.
+## 6 sp|P44…          26.1 JD_0… Conditio…            2 71180513.
+## # … with 1 more variable: TechReplicate &lt;chr&gt;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(oneproteindata.subset[, <span class="kw">c</span>(<span class="st">&quot;Condition&quot;</span>, <span class="st">&quot;BioReplicate&quot;</span>)])</code></pre>
+<pre><code>##             BioReplicate
+## Condition    1 2
+##   Condition1 3 0
+##   Condition2 0 3</code></pre>
+</details>
+<p>If we want to remove the levels that are not relevant anymore, we can
+use <code>droplevels</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">oneproteindata.subset &lt;-<span class="st"> </span><span class="kw">droplevels</span>(oneproteindata.subset)
+<span class="kw">table</span>(oneproteindata.subset[, <span class="kw">c</span>(<span class="st">&quot;Condition&quot;</span>, <span class="st">&quot;BioReplicate&quot;</span>)])</code></pre>
+<pre><code>##             BioReplicate
+## Condition    1 2
+##   Condition1 3 0
+##   Condition2 0 3</code></pre>
+<p>To perform the t-test, we use the <code>t.test</code> function. Let’s first
+familiarise ourselves with it by looking that the manual</p>
+<pre class="sourceCode r"><code class="sourceCode r">?t.test</code></pre>
+<p>And now apply to to our data</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># t test for different abundance (log2Int) between Groups (Condition)</span>
+result &lt;-<span class="st"> </span><span class="kw">t.test</span>(Log2Intensity <span class="op">~</span><span class="st"> </span>Condition,
+                 <span class="dt">data =</span> oneproteindata.subset,
+                 <span class="dt">var.equal =</span> <span class="ot">FALSE</span>)
+
+result</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  Log2Intensity by Condition
+## t = 2.0608, df = 3.4001, p-value = 0.1206
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.1025408  0.5619598
+## sample estimates:
+## mean in group Condition1 mean in group Condition2 
+##                 26.23632                 26.00661</code></pre>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<p>Repeat the t-test above but with calculating a 90% confidence interval
+for the log2 fold change.</p>
+</blockquote>
+<details>
+</details>
+</div>
+</div>
+<div id="the-htest-class" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> The <code>htest</code> class</h3>
+<p>The <code>t.test</code> function, like other hypothesis testing function, return
+a result of a type we haven’t encountered yet, the <code>htest</code> class:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(result)</code></pre>
+<pre><code>## [1] &quot;htest&quot;</code></pre>
+<p>which stores typical results from such tests. Let’s have a more
+detailed look at what information we can learn from the results our
+t-test. When we type the name of our <code>result</code> object, we get a short
+textual summary, but the object contains more details:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(result)</code></pre>
+<pre><code>##  [1] &quot;statistic&quot;   &quot;parameter&quot;   &quot;p.value&quot;     &quot;conf.int&quot;    &quot;estimate&quot;   
+##  [6] &quot;null.value&quot;  &quot;stderr&quot;      &quot;alternative&quot; &quot;method&quot;      &quot;data.name&quot;</code></pre>
+<p>and we can access each of these by using the <code>$</code> operator, like we
+used to access a single column from a <code>data.frame</code>, but the <code>htest</code>
+class is not a <code>data.frame</code> (it’s actually a <code>list</code>). For example, to
+access the group means, we would use</p>
+<pre class="sourceCode r"><code class="sourceCode r">result<span class="op">$</span>estimate</code></pre>
+<pre><code>## mean in group Condition1 mean in group Condition2 
+##                 26.23632                 26.00661</code></pre>
+<blockquote>
+<p><strong>Challenge</strong></p>
+<ul>
+<li>Calculate the (log2-transformed) fold change between groups</li>
+<li>Extract the value of the t-statistics</li>
+<li>Calculate the standard error (fold-change/t-statistics)</li>
+<li>Extract the degrees of freedom (parameter)</li>
+<li>Extract the p values</li>
+<li>Extract the 95% confidence intervals</li>
+</ul>
+</blockquote>
+<details>
+</details>
+<p>We can also manually compute our t-test statistic using the formulas
+we descibed above and compare it with the <code>summaryresult</code>.</p>
+<p>Recall the <code>summaryresult</code> we generated last section.</p>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult</code></pre>
+<pre><code>##        Group     mean         sd         se length ciw.lower.95
+## 1 Condition1 26.23632 0.10396539 0.06002444      3     25.97805
+## 2 Condition2 26.00661 0.16268179 0.09392438      3     25.60248
+## 3 Condition3 23.25609 0.09467798 0.05466236      3     23.02090
+## 4 Condition4 20.97056 0.73140174 0.42227499      3     19.15366
+##   ciw.upper.95 ciw.lower.99 ciw.upper.99
+## 1     26.49458     25.64058     26.83205
+## 2     26.41073     25.07442     26.93879
+## 3     23.49128     22.71357     23.79860
+## 4     22.78746     16.77955     25.16157</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">summaryresult12 &lt;-<span class="st"> </span>summaryresult[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, ]
+
+<span class="co">## test statistic, It is the same as &#39;result$statistic&#39; above.</span>
+<span class="kw">diff</span>(summaryresult12<span class="op">$</span>mean) <span class="co">## different sign, but absolute values are same as result$estimate[1]-result$estimate[2]</span></code></pre>
+<pre><code>## [1] -0.2297095</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sum</span>(summaryresult12<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>summaryresult12<span class="op">$</span>length)) <span class="co">## same as stand error</span></code></pre>
+<pre><code>## [1] 0.1114662</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## the t-statistic : sign is different</span>
+<span class="kw">diff</span>(summaryresult12<span class="op">$</span>mean)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">sum</span>(summaryresult12<span class="op">$</span>sd<span class="op">^</span><span class="dv">2</span><span class="op">/</span>summaryresult12<span class="op">$</span>length))</code></pre>
+<pre><code>## [1] -2.060799</code></pre>
+</div>
+<div id="re-calculating-the-p-values" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Re-calculating the p values</h3>
+<p>Referring back to our t-test results above, we can manually calculate
+the one- and two-side tests p-values using the t-statistics and the
+test parameter (using the <code>pt</code> function).</p>
+<p>Our result t statistic was 2.0607988 (accessible
+with <code>result$statistic</code>). Let’s start by visualising it along a t
+distribution. Let’s create data from such a distribution, making sure
+we set to appropriate parameter.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## generate 10^5 number with the same degree of freedom for distribution.</span>
+xt &lt;-<span class="st"> </span><span class="kw">rt</span>(<span class="fl">1e5</span>, result<span class="op">$</span>parameter)
+<span class="kw">plot</span>(<span class="kw">density</span>(xt), <span class="dt">xlim =</span> <span class="kw">c</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>))
+<span class="kw">abline</span>(<span class="dt">v =</span> result<span class="op">$</span>statistic, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>) <span class="co">## where t statistics are located.</span>
+<span class="kw">abline</span>(<span class="dt">h =</span> <span class="dv">0</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span>) <span class="co">## horizontal line at 0</span></code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<p><strong>The area on the left</strong> of that point is given by <code>pt(result$statistic, result$parameter)</code>, which is 0.939693. The p-value for a one-sided test, which is ** the area on the right** of red line, is this given by</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(result<span class="op">$</span>statistic, result<span class="op">$</span>parameter)</code></pre>
+<pre><code>##          t 
+## 0.06030697</code></pre>
+<p>And the p-value for a two-sided test is</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(result<span class="op">$</span>statistic, result<span class="op">$</span>parameter))</code></pre>
+<pre><code>##         t 
+## 0.1206139</code></pre>
+<p>which is the same as the one calculated by the t-test.</p>
+</div>
+<div id="choosing-a-model" class="section level3">
+<h3><span class="header-section-number">1.2.4</span> Choosing a model</h3>
+<p>The decision of which statistical model is appropriate for a given set of observations depends on the type of data that have been collected.</p>
+<ul>
+<li><p>Quantitative response with quantitative predictors : regression model</p></li>
+<li><p>Categorical response with quantitative predictors : logistic regression model for bivariate categorical response (e.g., Yes/No, dead/alive), multivariate logistic regression model when the response variable has more than two possible values.</p></li>
+<li><p>Quantitative response with categorical predictors : ANOVA model (quantitative response across several populations defined by one or more categorical predictor variables)</p></li>
+<li><p>Categorical response with categorical predictors : contingency table that can be used to draw conclusions about the relationships between variables.</p></li>
+</ul>
+<p>See also <em>Bremer &amp; Doerge</em>, <a href="https://www.amazon.com/dp/1621821129/ref=olp_product_details?_encoding=UTF8&amp;me=">Using R at the Bench : Step-by-Step Data
+Analytics for
+Biologists</a>,
+cold Spring Harbor LaboratoryPress, 2015.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-8-msstats.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/asms2019-day2-sec6.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
