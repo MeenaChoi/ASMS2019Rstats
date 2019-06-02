@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html >
+
 <head>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Chapter 3 Section 9: MSstatsTMT | ASMS 2019: Case studies in quantitative proteomics</title>
-  <meta name="description" content="Chapter 3 Section 9: MSstatsTMT | ASMS 2019: Case studies in quantitative proteomics" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="description" content="Chapter 3 Section 9: MSstatsTMT | ASMS 2019: Case studies in quantitative proteomics">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Chapter 3 Section 9: MSstatsTMT | ASMS 2019: Case studies in quantitative proteomics" />
   <meta property="og:type" content="book" />
@@ -21,14 +22,14 @@
   
   
 
-<meta name="author" content="Meena Choi and Ting Huang" />
+<meta name="author" content="Meena Choi and Ting Huang">
 
 
-<meta name="date" content="2019-06-01" />
+<meta name="date" content="2019-06-01">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
 <link rel="prev" href="section-8-msstats.html">
@@ -50,67 +51,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -229,31 +204,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Controlled mixtures: Sigma UPS1 48 protein-mix were spiked at 4 different ratio into a SILAC-labelled HeLa lysate. The mixtures were measured by TMT 10-plexes.</p></li>
 <li><p>the peptide quantification data of controlled mixtures, processed by Proteome Discoverer and MaxQuant.</p></li>
 </ul>
-<p><img src="img/Experimental_design.png" /></p>
+<div class="figure">
+<img src="img/Experimental_design.png" />
+
+</div>
 <hr />
 </div>
 <div id="load-msstatstmt" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Load MSstatsTMT</h3>
 <p>Load MSstatsTMT first. Then you are ready to start MSstats.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install MSstatsTMT from bioconductor</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install MSstatsTMT from bioconductor</span>
 <span class="co"># if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))</span>
 <span class="co">#     install.packages(&quot;BiocManager&quot;)</span>
 <span class="co"># BiocManager::install(&quot;MSstatsTMT&quot;)</span>
 
-<span class="kw">library</span>(MSstatsTMT) <span class="co"># make sure it is version 1.2.1</span></code></pre>
-<pre><code>## 
-## Attaching package: &#39;MSstatsTMT&#39;</code></pre>
-<pre><code>## The following object is masked _by_ &#39;.GlobalEnv&#39;:
-## 
-##     proteinGroups</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">?MSstatsTMT</code></pre>
-<p><img src="img/MSstatsTMT-workfolow.jpg" />
-***</p>
+<span class="kw">library</span>(MSstatsTMT) <span class="co"># make sure it is version 1.2.1</span></code></pre></div>
+<pre><code>## Registered S3 methods overwritten by &#39;ggplot2&#39;:
+##   method         from 
+##   [.quosures     rlang
+##   c.quosures     rlang
+##   print.quosures rlang</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?MSstatsTMT</code></pre></div>
+<p><img src="img/MSstatsTMT-workfolow.jpg" /> ***</p>
 </div>
 <div id="allowable-data-formats-1" class="section level3">
 <h3><span class="header-section-number">3.1.4</span> Allowable data formats</h3>
-<p><code>MSstatsTMT</code> performs statistical analysis steps, that follow peptide identification and quantitation. Therefore, input to MSstatsTMT is the output of other software tools (such as <code>Proteome Discoverer</code>, <code>MaxQuant</code> and so on) that read raw spectral files
-, identify and quantify peptide ions. The preferred structure of data for use in MSstatsTMT is a .csv file in a <em>long</em> format with at least 10 columns representing the following variables: <strong>ProteinName</strong>, <strong>PeptideSequence</strong>, <strong>Charge</strong>, <strong>PSM</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>Mixture</strong>, <strong>TechRepMixture</strong>, <strong>Intensity</strong>. The variable names are fixed, but are case-insensitive.</p>
+<p><code>MSstatsTMT</code> performs statistical analysis steps, that follow peptide identification and quantitation. Therefore, input to MSstatsTMT is the output of other software tools (such as <code>Proteome Discoverer</code>, <code>MaxQuant</code> and so on) that read raw spectral files , identify and quantify peptide ions. The preferred structure of data for use in MSstatsTMT is a .csv file in a <em>long</em> format with at least 10 columns representing the following variables: <strong>ProteinName</strong>, <strong>PeptideSequence</strong>, <strong>Charge</strong>, <strong>PSM</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>Mixture</strong>, <strong>TechRepMixture</strong>, <strong>Intensity</strong>. The variable names are fixed, but are case-insensitive.</p>
 <pre><code>##   ProteinName               PeptideSequence Charge
 ## 1      P04406        [K].lISWYDNEFGYSNR.[V]      2
 ## 2      Q9NSD9           [K].irPFAVAAVLr.[N]      3
@@ -284,18 +260,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6 Mixture1_Norm  144854.307</code></pre>
 <hr />
 <p>Let’s start preprocessing steps to make required input format for MSstatsTMT from output from diverse output of peptide quantification tools.</p>
-<p><img src="img/MSstatsTMT_workflow_preprocessing.jpg" /></p>
+<div class="figure">
+<img src="img/MSstatsTMT_workflow_preprocessing.jpg" />
+
+</div>
 </div>
 <div id="proteome-discoverer-output" class="section level3">
 <h3><span class="header-section-number">3.1.5</span> Proteome Discoverer output</h3>
 <div id="read-data-4" class="section level4">
 <h4><span class="header-section-number">3.1.5.1</span> Read data</h4>
-<p>The required input data is the PSM-level data generated by <code>Proteome Discoverer 2.2</code>.
-We first load and access the dataset processed by <code>Proteome Discoverer</code>. The file name is <em>‘spikedin_PSMs.txt’</em>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read output from Proteome Discoverer </span>
-raw.pd &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="dt">file=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/spikedin_PSMs.txt&quot;</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check the column names</span>
-<span class="kw">colnames</span>(raw.pd)</code></pre>
+<p>The required input data is the PSM-level data generated by <code>Proteome Discoverer 2.2</code>. We first load and access the dataset processed by <code>Proteome Discoverer</code>. The file name is <em>‘spikedin_PSMs.txt’</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read output from Proteome Discoverer </span>
+raw.pd &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="dt">file=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/spikedin_PSMs.txt&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check the column names</span>
+<span class="kw">colnames</span>(raw.pd)</code></pre></div>
 <pre><code>##  [1] &quot;Checked&quot;                     &quot;Confidence&quot;                 
 ##  [3] &quot;Identifying.Node&quot;            &quot;PSM.Ambiguity&quot;              
 ##  [5] &quot;Annotated.Sequence&quot;          &quot;Modifications&quot;              
@@ -322,21 +300,21 @@ raw.pd &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span cl
 ## [47] &quot;Identity.Relaxed&quot;            &quot;Expectation.Value&quot;          
 ## [49] &quot;Percolator.q.Value&quot;          &quot;Percolator.PEP&quot;</code></pre>
 <p>The column names are differently from required input. Let’s do preliminary check for this input.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of unique protein name</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of unique protein name</span>
 proteins &lt;-<span class="st"> </span><span class="kw">unique</span>(raw.pd<span class="op">$</span>Protein.Accessions)
-<span class="kw">length</span>(proteins)</code></pre>
+<span class="kw">length</span>(proteins)</code></pre></div>
 <pre><code>## [1] 50</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
-proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
+proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre></div>
 <pre><code>##  [1] P02788ups   P62988ups   P68871ups   P02741ups   P01008ups  
 ##  [6] P10636-8ups P02787ups   P02753ups   P00915ups   P05413ups  
 ## [11] P01344ups   P01579ups   P01031ups   P01375ups   P02144ups  
 ## 50 Levels: A1L0T0 O00625 O60427 P00915ups P01008ups ... Q9Y6C9</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of unique peptide names</span>
-<span class="kw">length</span>(<span class="kw">unique</span>(raw.pd<span class="op">$</span>Annotated.Sequence))</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of unique peptide names</span>
+<span class="kw">length</span>(<span class="kw">unique</span>(raw.pd<span class="op">$</span>Annotated.Sequence))</code></pre></div>
 <pre><code>## [1] 461</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># unique Spectrum.File, which is TMT run.</span>
-<span class="kw">unique</span>(raw.pd<span class="op">$</span>Spectrum.File)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># unique Spectrum.File, which is TMT run.</span>
+<span class="kw">unique</span>(raw.pd<span class="op">$</span>Spectrum.File)</code></pre></div>
 <pre><code>##  [1] 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw
 ##  [2] 161117_SILAC_HeLa_UPS1_TMT10_Mixture4_02.raw
 ##  [3] 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw
@@ -441,69 +419,69 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <tr class="odd">
 <td>1</td>
 <td>X127C</td>
-<td>1.X127C</td>
+<td>0.125</td>
 <td>0.125</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>X129N</td>
-<td>1.X129N</td>
+<td>0.125</td>
 <td>0.125</td>
 </tr>
 <tr class="odd">
 <td>1</td>
 <td>X128N</td>
-<td>1.X128N</td>
+<td>0.5</td>
 <td>0.5</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>X129C</td>
-<td>1.X129C</td>
+<td>0.5</td>
 <td>0.5</td>
 </tr>
 <tr class="odd">
 <td>1</td>
 <td>X127N</td>
-<td>1.X127N</td>
+<td>0.667</td>
 <td>0.667</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>X130C</td>
-<td>1.X130C</td>
+<td>0.667</td>
 <td>0.667</td>
 </tr>
 <tr class="odd">
 <td>1</td>
 <td>X128C</td>
-<td>1.X128C</td>
+<td>1</td>
 <td>1</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>X130N</td>
-<td>1.X130N</td>
+<td>1</td>
 <td>1</td>
 </tr>
 <tr class="odd">
 <td>1</td>
 <td>X126</td>
-<td>1.X126</td>
+<td>Norm</td>
 <td>Norm</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>X131</td>
-<td>1.X131</td>
+<td>Norm</td>
 <td>Norm</td>
 </tr>
 </tbody>
 </table>
 <p>The most important is that 1) <code>Run</code> is not order of spectral acquisition, but just unique MS run ID 2) if normalization between runs need to be done, then each run must have at least one <code>Norm</code> channel 3) <code>Channel</code> column in the annotation file should match with the corresponding channel names in in output of <code>Proteome Discoverer</code> 4) <strong>Spectrum.File</strong> in the PSM output of <code>Proteome Discoverer</code> should be the <strong>Run</strong> column in the annotation file 5) If one channel of one mixture doesn’t have sample, put <code>None</code> under <strong>Condition</strong> and <strong>BioReplicate</strong> column .</p>
-<p>Annotation information is required to fill in <strong>Condition</strong>, <strong>TechRepMixture</strong>, <strong>Mixture</strong> and <strong>BioReplicate</strong> for corresponding <strong>Run</strong> and <strong>Channel</strong> information. Users have to prepare as csv or txt file like ‘PD_Annotation.csv’, which includes <strong>Run</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>TechRepMixture</strong> and <strong>Mixture</strong> information, and load it in R.</p>
-<pre class="sourceCode r"><code class="sourceCode r">annot.pd &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/PD_Annotation.csv&quot;</span>)
-<span class="kw">head</span>(annot.pd)</code></pre>
+<p>Annotation information is required to fill in <strong>Condition</strong>, <strong>TechRepMixture</strong>, <strong>Fraction</strong>, <strong>Mixture</strong> and <strong>BioReplicate</strong> for corresponding <strong>Run</strong> and <strong>Channel</strong> information. Users have to prepare as csv or txt file like ‘PD_Annotation.csv’, which includes <strong>Run</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>TechRepMixture</strong>, <strong>Fraction</strong> and <strong>Mixture</strong> information, and load it in R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">annot.pd &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/PD_Annotation.csv&quot;</span>)
+<span class="kw">head</span>(annot.pd)</code></pre></div>
 <pre><code>##                                            Run  Mixture TechRepMixture
 ## 1 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw Mixture3              3
 ## 2 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw Mixture3              3
@@ -522,8 +500,8 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <h5><span class="header-section-number">3.1.5.2.1</span> Prepare the file with run information</h5>
 <p>Raw Spectrum file name in the output of peptide quantification tool should be the Run information in the annotation file.</p>
 <p>Let’s start with <strong>Spectrum.File</strong> in PSM output of <code>Proteome Discoverer</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">runs &lt;-<span class="st"> </span><span class="kw">unique</span>(raw.pd<span class="op">$</span>Spectrum.File) <span class="co"># MS runs</span>
-runs</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">runs &lt;-<span class="st"> </span><span class="kw">unique</span>(raw.pd<span class="op">$</span>Spectrum.File) <span class="co"># MS runs</span>
+runs</code></pre></div>
 <pre><code>##  [1] 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw
 ##  [2] 161117_SILAC_HeLa_UPS1_TMT10_Mixture4_02.raw
 ##  [3] 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw
@@ -542,7 +520,7 @@ runs</code></pre>
 ## 15 Levels: 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw ...</code></pre>
 <p>The run ID has the mixture and technical replicate information</p>
 <p>Let’s try to extract the mixture and technical replicate information.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyr)
 <span class="kw">library</span>(dplyr)
 
 Run_info &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Run =</span> runs) <span class="co"># initialize the run file</span>
@@ -550,10 +528,10 @@ Run_info &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span 
 <span class="co"># use function separate()</span>
 ?separate
 
-<span class="co">## Add the mixture and technical replicate information</span>
+## Add the mixture and technical replicate information
 Run_info &lt;-<span class="st"> </span>Run_info <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">separate</span>(Run, <span class="kw">c</span>(<span class="st">&quot;Mixture&quot;</span>, <span class="st">&quot;TechRepMixture&quot;</span>), <span class="dt">sep=</span><span class="st">&quot;_0&quot;</span>, <span class="dt">remove =</span> <span class="ot">FALSE</span>) 
-Run_info</code></pre>
+Run_info</code></pre></div>
 <pre><code>##                                             Run
 ## 1  161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw
 ## 2  161117_SILAC_HeLa_UPS1_TMT10_Mixture4_02.raw
@@ -587,12 +565,12 @@ Run_info</code></pre>
 ## 14 161117_SILAC_HeLa_UPS1_TMT10_Mixture2          3.raw
 ## 15 161117_SILAC_HeLa_UPS1_TMT10_Mixture2          1.raw</code></pre>
 <p>Then let’s clean the Mixture ID and TechRepMixture ID</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## clean the run file and add fraction information </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## clean the run file and add fraction information 
 Run_info &lt;-<span class="st"> </span>Run_info <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Mixture =</span> <span class="kw">gsub</span>(<span class="st">&quot;161117_SILAC_HeLa_UPS1_TMT10_&quot;</span>, <span class="st">&quot;&quot;</span>, Mixture),
          <span class="dt">TechRepMixture =</span> <span class="kw">gsub</span>(<span class="st">&quot;.raw&quot;</span>, <span class="st">&quot;&quot;</span>, TechRepMixture),
          <span class="dt">Fraction =</span> <span class="st">&quot;F1&quot;</span>)
-Run_info</code></pre>
+Run_info</code></pre></div>
 <pre><code>##                                             Run  Mixture TechRepMixture
 ## 1  161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw Mixture3              3
 ## 2  161117_SILAC_HeLa_UPS1_TMT10_Mixture4_02.raw Mixture4              2
@@ -629,7 +607,7 @@ Run_info</code></pre>
 <div id="prepare-the-file-with-group-information" class="section level5">
 <h5><span class="header-section-number">3.1.5.2.2</span> Prepare the file with group information</h5>
 <p>Let’s add the group and biological replicate information for each channel in each mixture. The channel ID should be consistent with the reporter ion intensity columns in the PSM file of <code>Proteome Discoverer</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(raw.pd)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(raw.pd)</code></pre></div>
 <pre><code>##  [1] &quot;Checked&quot;                     &quot;Confidence&quot;                 
 ##  [3] &quot;Identifying.Node&quot;            &quot;PSM.Ambiguity&quot;              
 ##  [5] &quot;Annotated.Sequence&quot;          &quot;Modifications&quot;              
@@ -655,16 +633,16 @@ Run_info</code></pre>
 ## [45] &quot;Ions.Score&quot;                  &quot;Identity.Strict&quot;            
 ## [47] &quot;Identity.Relaxed&quot;            &quot;Expectation.Value&quot;          
 ## [49] &quot;Percolator.q.Value&quot;          &quot;Percolator.PEP&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## Channel ID in the PSM file</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Channel ID in the PSM file
 channels &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;126&quot;</span>, <span class="st">&quot;127N&quot;</span>, <span class="st">&quot;127C&quot;</span>, <span class="st">&quot;128N&quot;</span>, <span class="st">&quot;128C&quot;</span>, <span class="st">&quot;129N&quot;</span>, <span class="st">&quot;129C&quot;</span>, <span class="st">&quot;130N&quot;</span>, <span class="st">&quot;130C&quot;</span>, <span class="st">&quot;131&quot;</span>)
-<span class="co">## Mixture ID from run file</span>
+## Mixture ID from run file
 mixtures &lt;-<span class="st"> </span><span class="kw">unique</span>(Run_info<span class="op">$</span>Mixture)
-mixtures</code></pre>
+mixtures</code></pre></div>
 <pre><code>## [1] &quot;Mixture3&quot; &quot;Mixture4&quot; &quot;Mixture1&quot; &quot;Mixture5&quot; &quot;Mixture2&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## create the file with channel information in each mixture</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## create the file with channel information in each mixture
 Group_info &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(channels, mixtures)
 <span class="kw">colnames</span>(Group_info) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Channel&quot;</span>, <span class="st">&quot;Mixture&quot;</span>)
-<span class="kw">head</span>(Group_info)</code></pre>
+<span class="kw">head</span>(Group_info)</code></pre></div>
 <pre><code>##   Channel  Mixture
 ## 1     126 Mixture3
 ## 2    127N Mixture3
@@ -672,12 +650,12 @@ Group_info &lt;-<span class="st"> </span><span class="kw">expand.grid</span>(cha
 ## 4    128N Mixture3
 ## 5    128C Mixture3
 ## 6    129N Mixture3</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">## save the channel file and fill in the condition and biological replicate information manually</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## save the channel file and fill in the condition and biological replicate information manually
 <span class="kw">write.csv</span>(Group_info, <span class="dt">file =</span> <span class="st">&quot;Group_info.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)
 
-<span class="co">## Now the condition information should be available in the file</span>
+## Now the condition information should be available in the file
 Group_info_filled &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;data/data_ProteomeDiscoverer_TMT/Group_info_pd.csv&quot;</span>)
-<span class="kw">head</span>(Group_info_filled)</code></pre>
+<span class="kw">head</span>(Group_info_filled)</code></pre></div>
 <pre><code>##   Channel  Mixture Condition BioReplicate
 ## 1     126 Mixture3      Norm         Norm
 ## 2    127N Mixture3     0.125        0.125
@@ -689,13 +667,13 @@ Group_info_filled &lt;-<span class="st"> </span><span class="kw">read.csv</span>
 <div id="prepare-the-final-annotation-file" class="section level5">
 <h5><span class="header-section-number">3.1.5.2.3</span> Prepare the final annotation file</h5>
 <p>Let’s generate the annotation file from run file and group file</p>
-<pre class="sourceCode r"><code class="sourceCode r">annotation &lt;-<span class="st"> </span><span class="kw">full_join</span>(Run_info, Group_info_filled)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">annotation &lt;-<span class="st"> </span><span class="kw">full_join</span>(Run_info, Group_info_filled)</code></pre></div>
 <pre><code>## Joining, by = &quot;Mixture&quot;</code></pre>
 <pre><code>## Warning: Column `Mixture` joining character vector and factor, coercing
 ## into character vector</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(annotation)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(annotation)</code></pre></div>
 <pre><code>## [1] 150</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(annotation)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(annotation)</code></pre></div>
 <pre><code>##                                            Run  Mixture TechRepMixture
 ## 1 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw Mixture3              3
 ## 2 161117_SILAC_HeLa_UPS1_TMT10_Mixture3_03.raw Mixture3              3
@@ -719,14 +697,13 @@ Group_info_filled &lt;-<span class="st"> </span><span class="kw">read.csv</span>
 <ul>
 <li>Peptide ions which are shared by more than one protein are removed</li>
 <li>If one spectrum has multiple identifications within one run, it only keeps the best identification which has most measurements within that run or highest identification score or largest summation of all the measurements within that run</li>
-<li>If one peptide ion has any missing value within one run, it removes the peptide ion from that run</li>
 <li>For fractionation, it removes the shared peptide ions among the fractions of each mixture and then combine all the fractions for each mixture</li>
 </ul>
 <p>For further details, visit the help file using the following code.</p>
-<pre class="sourceCode r"><code class="sourceCode r">?PDtoMSstatsTMTFormat</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformating and pre-processing for PD output.</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?PDtoMSstatsTMTFormat</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformating and pre-processing for PD output.</span>
 input.pd &lt;-<span class="st"> </span><span class="kw">PDtoMSstatsTMTFormat</span>(raw.pd, <span class="dt">annotation=</span>annotation)
-<span class="kw">head</span>(input.pd)</code></pre>
+<span class="kw">head</span>(input.pd)</code></pre></div>
 <pre><code>##   ProteinName                  PeptideSequence Charge
 ## 1   P05413ups           [K].lGVEFDETTADDRk.[V]      3
 ## 2      Q92734 [K].nVMSAFGLTDDQVSGPPSAPAEDr.[S]      3
@@ -758,12 +735,12 @@ input.pd &lt;-<span class="st"> </span><span class="kw">PDtoMSstatsTMTFormat</sp
 </div>
 <div id="preliminary-check-2" class="section level4">
 <h4><span class="header-section-number">3.1.5.4</span> Preliminary check</h4>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of proteins</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of proteins</span>
 proteins &lt;-<span class="st"> </span><span class="kw">unique</span>(input.pd<span class="op">$</span>ProteinName)
-<span class="kw">length</span>(proteins)</code></pre>
+<span class="kw">length</span>(proteins)</code></pre></div>
 <pre><code>## [1] 50</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
-proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
+proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre></div>
 <pre><code>##  [1] P05413ups   P02787ups   P00915ups   P02788ups   P01344ups  
 ##  [6] P01375ups   P01031ups   P01008ups   P68871ups   P02753ups  
 ## [11] P10636-8ups P62988ups   P02741ups   P01579ups   P02144ups  
@@ -772,8 +749,8 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <div id="save-your-work-1" class="section level4">
 <h4><span class="header-section-number">3.1.5.5</span> Save your work</h4>
 <p>We can save the data that we made so far.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(input.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/input.pd.rda&#39;</span>)
-<span class="co">#write.csv(input.pd, file=&#39;data/data_ProteomeDiscoverer_TMT/input.pd.csv&#39;, row.names = FALSE)</span></code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(input.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/input.pd.rda&#39;</span>)
+<span class="co">#write.csv(input.pd, file=&#39;data/data_ProteomeDiscoverer_TMT/input.pd.csv&#39;, row.names = FALSE)</span></code></pre></div>
 <hr />
 </div>
 </div>
@@ -782,11 +759,11 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <div id="read-data-5" class="section level4">
 <h4><span class="header-section-number">3.1.6.1</span> Read data</h4>
 <p>Three files should be prepared before MSstatsTMT. Two files, ‘proteinGroups.txt’ and ‘evidence.txt’ are outputs from MaxQuant.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># First, get protein ID information</span>
-proteinGroups &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;data/data_MaxQuant_TMT/proteinGroups.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read in MaxQuant file: evidence.txt</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># First, get protein ID information</span>
+proteinGroups &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;data/data_MaxQuant_TMT/proteinGroups.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read in MaxQuant file: evidence.txt</span>
 evi &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;data/data_MaxQuant_TMT/evidence.txt&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)
-<span class="kw">colnames</span>(evi)</code></pre>
+<span class="kw">colnames</span>(evi)</code></pre></div>
 <pre><code>##   [1] &quot;Sequence&quot;                           
 ##   [2] &quot;Length&quot;                             
 ##   [3] &quot;Modifications&quot;                      
@@ -892,7 +869,7 @@ evi &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class
 ## [103] &quot;Lys8.site.IDs&quot;                      
 ## [104] &quot;Lys8.TMT6.site.IDs&quot;                 
 ## [105] &quot;Oxidation..M..site.IDs&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(evi<span class="op">$</span>Raw.file)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(evi<span class="op">$</span>Raw.file)</code></pre></div>
 <pre><code>##  [1] 161117_SILAC_HeLa_UPS1_TMT10_Mixture2_01
 ##  [2] 161117_SILAC_HeLa_UPS1_TMT10_Mixture5_01
 ##  [3] 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_02
@@ -909,14 +886,14 @@ evi &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class
 ## [14] 161117_SILAC_HeLa_UPS1_TMT10_Mixture4_03
 ## [15] 161117_SILAC_HeLa_UPS1_TMT10_Mixture5_03
 ## 15 Levels: 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01 ...</code></pre>
-<p>Again, we need file annotation file, required to fill in Condition, BioReplicate and Mixture for corresponding Run and Channel information. Users have to prepare as csv or txt file like ‘MaxQuant_annotation.csv’, which includes <strong>Run</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>TechRepMixture</strong> and <strong>Mixture</strong> information, and load it in R.</p>
+<p>Again, we need file annotation file, required to fill in Condition, BioReplicate and Mixture for corresponding Run and Channel information. Users have to prepare as csv or txt file like ‘MaxQuant_annotation.csv’, which includes <strong>Run</strong>, <strong>Channel</strong>, <strong>Condition</strong>, <strong>BioReplicate</strong>, <strong>TechRepMixture</strong>, <strong>Fraction</strong> and <strong>Mixture</strong> information, and load it in R.</p>
 </div>
 <div id="set-annotation-file-4" class="section level4">
 <h4><span class="header-section-number">3.1.6.2</span> Set annotation file</h4>
 <p><strong>Run</strong> column in the annotation file should be the same as unique <strong>Raw.file</strong> in evidence.txt file. <strong>Channel</strong> column in the annotation file should match with the corresponding channel names in evidence.txt file.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read in annotation including condition and biological replicates: MaxQuant_annotation.csv</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read in annotation including condition and biological replicates: MaxQuant_annotation.csv</span>
 annot.maxquant &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/data_MaxQuant_TMT/MaxQuant_annotation.csv&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)
-<span class="kw">head</span>(annot.maxquant)</code></pre>
+<span class="kw">head</span>(annot.maxquant)</code></pre></div>
 <pre><code>##                                        Run Fraction TechRepMixture
 ## 1 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01        1              1
 ## 2 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01        1              1
@@ -940,15 +917,14 @@ annot.maxquant &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<s
 <li>Use <code>Proteins</code> in ‘proteinGroups.txt’ as protein ID</li>
 <li>Peptide ions which are shared by more than one protein are removed</li>
 <li>If one spectrum has multiple identifications within one run, it only keeps the best identification which has most measurements within that run or highest identification score or largest summation of all the measurements within that run</li>
-<li>If one peptide ion has any missing value within one run, it removes the peptide ion from that run</li>
 <li>For fractionation, it removes the shared peptide ions among the fractions of each mixture and then combine all the fractions for each mixture</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">?MaxQtoMSstatsTMTFormat</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformating and pre-processing for MaxQuant output.</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?MaxQtoMSstatsTMTFormat</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># reformating and pre-processing for MaxQuant output.</span>
 input.maxquant &lt;-<span class="st"> </span><span class="kw">MaxQtoMSstatsTMTFormat</span>(<span class="dt">evidence=</span>evi, 
                                       <span class="dt">annotation=</span>annot.maxquant,
                                       <span class="dt">proteinGroups=</span>proteinGroups)
-<span class="kw">head</span>(input.maxquant)</code></pre>
+<span class="kw">head</span>(input.maxquant)</code></pre></div>
 <pre><code>##   ProteinName             PeptideSequence Charge
 ## 1      P67870 VYCENQPMLPIGLSDIPGEAMVK(ly)      3
 ## 2      Q9HAV4              TDSPSCEYSR(ar)      2
@@ -980,19 +956,19 @@ input.maxquant &lt;-<span class="st"> </span><span class="kw">MaxQtoMSstatsTMTFo
 </div>
 <div id="preliminary-check-3" class="section level4">
 <h4><span class="header-section-number">3.1.6.4</span> Preliminary check</h4>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of proteins</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># total number of proteins</span>
 proteins &lt;-<span class="st"> </span><span class="kw">unique</span>(input.maxquant<span class="op">$</span>ProteinName)
-<span class="kw">length</span>(proteins)</code></pre>
+<span class="kw">length</span>(proteins)</code></pre></div>
 <pre><code>## [1] 33</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
-proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># show the spiked-in proteins</span>
+proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,proteins)]</code></pre></div>
 <pre><code>## [1] P62988ups P62937ups
 ## 39 Levels: A1L0T0 O00625 O60427 P01127ups P01344ups P04183 ... Q9Y6C9</code></pre>
 </div>
 <div id="save-your-work-2" class="section level4">
 <h4><span class="header-section-number">3.1.6.5</span> Save your work</h4>
 <p>We can save the data that we made so far.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(input.maxquant, <span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/input.maxquant.rda&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(input.maxquant, <span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/input.maxquant.rda&#39;</span>)</code></pre></div>
 <hr />
 </div>
 </div>
@@ -1004,11 +980,17 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <ul>
 <li>Channel-level summarization and normalization between runs</li>
 </ul>
-<p><img src="img/MSstatsTMT_workflow_proteinSum.jpg" style="width:70.0%" /></p>
+<div class="figure">
+<img src="img/MSstatsTMT_workflow_proteinSum.jpg" style="width:70.0%" />
+
+</div>
 <ul>
 <li>Significance analysis for MS proteomics based peak intensities data</li>
 </ul>
-<p><img src="img/MSstatsTMT_workflow_groupComp.jpg" style="width:70.0%" /></p>
+<div class="figure">
+<img src="img/MSstatsTMT_workflow_groupComp.jpg" style="width:70.0%" />
+
+</div>
 </div>
 <div id="data-2" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Data</h3>
@@ -1022,7 +1004,7 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <p>Let’s start processing steps. It includes log transformation of intensities, channel-level summarization and normalization between MS runs.</p>
 <div id="load-the-pre-processed-data-of-pd-output" class="section level4">
 <h4><span class="header-section-number">3.2.3.1</span> Load the pre-processed data of PD output</h4>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/input.pd.rda&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/input.pd.rda&#39;</span>)</code></pre></div>
 </div>
 </div>
 <div id="normalizing-and-summarizing-data-with-proteinsummarization" class="section level3">
@@ -1041,20 +1023,20 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 </ol></li>
 </ul>
 <p>To get started with this function, visit the help section of <code>proteinSummarization</code> first:</p>
-<pre class="sourceCode r"><code class="sourceCode r">?proteinSummarization </code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?proteinSummarization </code></pre></div>
 <div id="default-summarization-and-normalization-options" class="section level4">
 <h4><span class="header-section-number">3.2.4.1</span> Default summarization and normalization options</h4>
 <p><code>proteinSummarization</code> perform first (1) channel level summarization will be performed, which is robust parameter estimation by TMP (Tukey’s median polish).</p>
 <p>Then, (2) normalization between MS runs. TRUE(default) needs at least one normalization channel in each MS run, annotated by ‘Norm’ in Condition column. If there are multiple normalization channels, all the normalization channels are averaged for the normalization. FALSE will not perform normalization step.</p>
 <p>Below show the default for all options in <code>proteinSummarization</code></p>
-<pre class="sourceCode r"><code class="sourceCode r">quant.pd &lt;-<span class="st"> </span><span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">quant.pd &lt;-<span class="st"> </span><span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
                              <span class="dt">method =</span> <span class="st">&quot;msstats&quot;</span>, 
-                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(quant.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/quant.pd.rda&#39;</span>)</code></pre>
+                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(quant.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/quant.pd.rda&#39;</span>)</code></pre></div>
 <p>Let’s check output from <code>proteinSummarization</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This table includes normalized channel-level log2 intensities. (column : Abundance)</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># This table includes normalized channel-level log2 intensities. (column : Abundance)</span>
 <span class="co"># Now one summarized log2 intensities per Protein, Run, Channel.</span>
-<span class="kw">head</span>(quant.pd)</code></pre>
+<span class="kw">head</span>(quant.pd)</code></pre></div>
 <pre><code>##                                             Run Protein Abundance Channel
 ## 1: 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw  A1L0T0  12.26466    127C
 ## 2: 161117_SILAC_HeLa_UPS1_TMT10_Mixture1_01.raw  A1L0T0  12.20385    129N
@@ -1077,49 +1059,61 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <div id="profile-plots-1" class="section level4">
 <h4><span class="header-section-number">3.2.5.1</span> Profile plots</h4>
 <p>Profile plot is good visualization to check individual measurements. Each dot means one intensity per Run per Channel. Each panel represents one MS run and each dot within one panel is one channel within one Run. The dots are linked with line per feature. If line is disconnected, that means there is no value (missing value). Color means different peptides and charge stages.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># if you have many MS runs, adjust width of plot (make wider)</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># if you have many MS runs, adjust width of plot (make wider)</span>
 <span class="co"># Profile plot for the normalized data </span>
 <span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
                      <span class="dt">data.summarization=</span>quant.pd, <span class="co"># protein-level data</span>
                      <span class="dt">type=</span><span class="st">&#39;ProfilePlot&#39;</span>, <span class="co"># choice of visualization</span>
                      <span class="dt">width =</span> <span class="dv">15</span>,
                      <span class="dt">height =</span> <span class="dv">5</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_norm_&quot;</span>) </code></pre>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_norm_&quot;</span>) </code></pre></div>
 <p><code>pd_norm_ProfilePlot.pdf</code> and <code>pd_norm_ProfilePlot_wSummarization.pdf</code> are generated in the current directory.</p>
 <p>Then, Let’s go though profile plots to see overall quality of data.</p>
 <p>There are two pdfs for each protein, first is profile plot and second plot is profile plot with summarized and normalized data. This profile plot shows each peptide ions across runs and channels, grouped per condition. Each peptide has a different colour/type layout.</p>
-<p><img src="img/pd_norm_ProfilePlot_1.jpg" /></p>
+<div class="figure">
+<img src="img/pd_norm_ProfilePlot_1.jpg" />
+
+</div>
 <p>This plot shows the same peptide ions in grey, with the values as summarized by the model overlayed in red.</p>
-<p><img src="img/pd_norm_ProfilePlot_wSummarization_1.jpg" /></p>
+<div class="figure">
+<img src="img/pd_norm_ProfilePlot_wSummarization_1.jpg" />
+
+</div>
 <p>Instead of making all profile plots for all proteins, we can make plot for individual protein. Here is the example of background protein, <code>P35221</code></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
                      <span class="dt">data.summarization=</span>quant.pd, <span class="co"># protein-level data</span>
                      <span class="dt">type=</span><span class="st">&#39;ProfilePlot&#39;</span>, <span class="co"># choice of visualization</span>
                      <span class="dt">width =</span> <span class="dv">15</span>,
                      <span class="dt">height =</span> <span class="dv">5</span>,
                      <span class="dt">which.Protein =</span> <span class="st">&#39;P35221&#39;</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_norm_P35221_&quot;</span>) </code></pre>
-<p><img src="img/pd_norm_P35221_ProfilePlot.png" /></p>
-<p><img src="img/pd_norm_P35221_ProfilePlot_wSummarization.png" /></p>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_norm_P35221_&quot;</span>) </code></pre></div>
+<div class="figure">
+<img src="img/pd_norm_P35221_ProfilePlot.png" />
+
+</div>
+<div class="figure">
+<img src="img/pd_norm_P35221_ProfilePlot_wSummarization.png" />
+
+</div>
 </div>
 <div id="quality-control-plots-1" class="section level4">
 <h4><span class="header-section-number">3.2.5.2</span> Quality control plots</h4>
 <p>QC plot is good to see the distribution of peptide intensities per MS run and channels, and outliers.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># QC plot for peptide intensity data</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># QC plot for peptide intensity data</span>
 <span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
                      <span class="dt">data.summarization=</span>quant.pd, <span class="co"># protein-level data</span>
                      <span class="dt">type=</span><span class="st">&#39;QCPlot&#39;</span>, <span class="co"># choice of visualization</span>
                      <span class="dt">width =</span> <span class="dv">15</span>,
                      <span class="dt">height =</span> <span class="dv">5</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_&quot;</span>) </code></pre>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_&quot;</span>) </code></pre></div>
 <p>Then, <code>pd_QCPlot.pdf</code> are generated in the current directory.</p>
-<p><img src="img/pd_QCPlot_all.jpg" /></p>
+<div class="figure">
+<img src="img/pd_QCPlot_all.jpg" />
+
+</div>
 <blockquote>
 <p><strong>Challenge</strong></p>
-<p>This is the study design. Let’s check visualization for other 3 proteins.
-1. P02788ups
-2. P02787ups
-3. P26639</p>
+<p>This is the study design. Let’s check visualization for other 3 proteins. 1. P02788ups 2. P02787ups 3. P26639</p>
 </blockquote>
 <hr />
 </div>
@@ -1129,7 +1123,7 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <div id="no-normalization-1" class="section level4">
 <h4><span class="header-section-number">3.2.6.1</span> No normalization</h4>
 <p>No normalization is performed. If you don’t want to do run-to-run normalization, you should use like below.</p>
-<pre class="sourceCode r"><code class="sourceCode r">quant.pd.nonorm &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">quant.pd.nonorm &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
                              <span class="dt">method =</span> <span class="st">&quot;msstats&quot;</span>, 
                              <span class="dt">normalization =</span> <span class="ot">FALSE</span>)
 
@@ -1140,25 +1134,31 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
                      <span class="dt">height =</span> <span class="dv">5</span>,
                     <span class="dt">originalPlot =</span> <span class="ot">FALSE</span>,
                      <span class="dt">which.Protein =</span> <span class="st">&#39;P35221&#39;</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_noNorm_P35221_&quot;</span>) </code></pre>
-<p><img src="img/pd_noNorm_P35221_ProfilePlot_wSummarization.png" /></p>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_noNorm_P35221_&quot;</span>) </code></pre></div>
+<div class="figure">
+<img src="img/pd_noNorm_P35221_ProfilePlot_wSummarization.png" />
+
+</div>
 </div>
 <div id="different-summarization-option-1" class="section level4">
 <h4><span class="header-section-number">3.2.6.2</span> Different summarization option</h4>
 <p>MSstatsTMT provides five different summarization methods for protein quantification. <code>msstats</code> is default, which we have used before. Now let’s try another robust summarization method <code>Median</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">quant.pd.median &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">quant.pd.median &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.pd, 
                              <span class="dt">method =</span> <span class="st">&quot;Median&quot;</span>, 
-                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre>
+                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>Run summarization is different.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.pd, <span class="co"># PSM-level data</span>
                      <span class="dt">data.summarization=</span>quant.pd.median, <span class="co"># protein-level data</span>
                      <span class="dt">type=</span><span class="st">&#39;ProfilePlot&#39;</span>, <span class="co"># choice of visualization</span>
                      <span class="dt">width =</span> <span class="dv">15</span>,
                      <span class="dt">height =</span> <span class="dv">5</span>,
                     <span class="dt">originalPlot =</span> <span class="ot">FALSE</span>,
                      <span class="dt">which.Protein =</span> <span class="st">&#39;P35221&#39;</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_median_P35221_&quot;</span>) </code></pre>
-<p><img src="img/pd_median_P35221_ProfilePlot_wSummarization.png" /></p>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_ProteomeDiscoverer_TMT/pd_median_P35221_&quot;</span>) </code></pre></div>
+<div class="figure">
+<img src="img/pd_median_P35221_ProfilePlot_wSummarization.png" />
+
+</div>
 <hr />
 </div>
 </div>
@@ -1167,19 +1167,16 @@ proteins[<span class="kw">grepl</span>(<span class="st">&quot;ups&quot;</span>,p
 <div id="assign-contrast-matrix-1" class="section level4">
 <h4><span class="header-section-number">3.2.7.1</span> Assign contrast matrix</h4>
 <p>After we summarized each protein’s behavior across conditions and normalized the data between runs in <code>proteinSummarization</code> step, we are all set to compare protein changes between groups of conditions. Within MSstatsTMT we can do this with the <code>groupComparisonTMT</code> function, which takes as input the output of the <code>proteinSummarization</code> function.</p>
-<pre class="sourceCode r"><code class="sourceCode r">?groupComparisonTMT</code></pre>
-<p>We have to tell <code>groupComparisonTMT</code> which are the conditions we would like to compare.
-You can make your <code>contrast.matrix</code> in R in a text editor. We define our contrast matrix by adding a column for every condition. We add a row for every comparison we would like to make between groups of conditions.</p>
-<p><strong>0</strong> is for conditions we would like to ignore.
-<strong>1</strong> is for conditions we would like to put in the numerator of the ratio or fold-change.
-<strong>-1</strong> is for conditions we would like to put in the denumerator of the ratio or fold-change.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?groupComparisonTMT</code></pre></div>
+<p>We have to tell <code>groupComparisonTMT</code> which are the conditions we would like to compare. You can make your <code>contrast.matrix</code> in R in a text editor. We define our contrast matrix by adding a column for every condition. We add a row for every comparison we would like to make between groups of conditions.</p>
+<p><strong>0</strong> is for conditions we would like to ignore. <strong>1</strong> is for conditions we would like to put in the numerator of the ratio or fold-change. <strong>-1</strong> is for conditions we would like to put in the denumerator of the ratio or fold-change.</p>
 <p>If you have multiple groups, you can assign any group comparisons you are interested in.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check unique conditions and check order of condition information</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check unique conditions and check order of condition information</span>
 <span class="co"># In this case, four different concentrations</span>
-<span class="kw">unique</span>(quant.pd<span class="op">$</span>Condition)</code></pre>
+<span class="kw">unique</span>(quant.pd<span class="op">$</span>Condition)</code></pre></div>
 <pre><code>## [1] 0.125 0.5   0.667 1     Norm 
 ## Levels: 0.125 0.5 0.667 1 Norm</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># &#39;Norm&#39; will be removed during tesing and should be not considered in the contrast</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># &#39;Norm&#39; will be removed during tesing and should be not considered in the contrast</span>
 comparison1&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">nrow=</span><span class="dv">1</span>) <span class="co"># 0.5-0.125</span>
 comparison2&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="dt">nrow=</span><span class="dv">1</span>) <span class="co"># 0.667-0.5</span>
 comparison&lt;-<span class="kw">rbind</span>(comparison1, comparison2)
@@ -1188,7 +1185,7 @@ comparison&lt;-<span class="kw">rbind</span>(comparison1, comparison2)
 <span class="co"># Set the names of each row</span>
 <span class="kw">row.names</span>(comparison)&lt;-<span class="kw">c</span>(<span class="st">&quot;1-0.125&quot;</span>,<span class="st">&quot;0.667-0.5&quot;</span>)
 
-comparison</code></pre>
+comparison</code></pre></div>
 <pre><code>##           0.125 0.5 0.667 1
 ## 1-0.125      -1   0     0 1
 ## 0.667-0.5     0  -1     1 0</code></pre>
@@ -1196,10 +1193,10 @@ comparison</code></pre>
 <p><strong>Challenges</strong></p>
 <p>Make the matrix, named <code>comparison</code>, for all 6 paired comparision among 4 conditions (condition1, condition2, condition3, condition4)</p>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(quant.pd<span class="op">$</span>Condition)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(quant.pd<span class="op">$</span>Condition)</code></pre></div>
 <pre><code>## [1] 0.125 0.5   0.667 1     Norm 
 ## Levels: 0.125 0.5 0.667 1 Norm</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">comparison1&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">nrow=</span><span class="dv">1</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">comparison1&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dt">nrow=</span><span class="dv">1</span>)
 comparison2&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="dt">nrow=</span><span class="dv">1</span>)
 comparison3&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>),<span class="dt">nrow=</span><span class="dv">1</span>)
 comparison4&lt;-<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="dt">nrow=</span><span class="dv">1</span>)
@@ -1210,7 +1207,7 @@ comparison_all&lt;-<span class="kw">rbind</span>(comparison1, comparison2, compa
 <span class="kw">colnames</span>(comparison_all)&lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;0.125&quot;</span>, <span class="st">&quot;0.5&quot;</span>, <span class="st">&quot;0.667&quot;</span>, <span class="st">&quot;1&quot;</span>)
 <span class="co"># Set the names of each row</span>
 <span class="kw">row.names</span>(comparison_all)&lt;-<span class="kw">c</span>(<span class="st">&quot;0.5-0.125&quot;</span>,<span class="st">&quot;0.667-0.125&quot;</span>,<span class="st">&quot;1-0.125&quot;</span>,<span class="st">&quot;0.667-0.5&quot;</span>,<span class="st">&quot;1-0.5&quot;</span>,<span class="st">&quot;1-0.667&quot;</span>)
-comparison_all</code></pre>
+comparison_all</code></pre></div>
 <pre><code>##             0.125 0.5 0.667 1
 ## 0.5-0.125      -1   1     0 0
 ## 0.667-0.125    -1   0     1 0
@@ -1222,20 +1219,20 @@ comparison_all</code></pre>
 <div id="group-comparisons-with-groupcomparisontmt" class="section level4">
 <h4><span class="header-section-number">3.2.7.2</span> Group comparisons with <code>groupComparisonTMT</code></h4>
 <p><code>groupComparisonTMT</code> uses the channel-level summarized data for hypothesis testing.</p>
-<pre class="sourceCode r"><code class="sourceCode r">test.pd &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.pd, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test.pd &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.pd, 
                                <span class="dt">contrast.matrix =</span> comparison,
                                <span class="dt">remove_norm_channel =</span> <span class="ot">TRUE</span>, <span class="co"># remove norm channels</span>
                                <span class="dt">moderated =</span> <span class="ot">TRUE</span>, <span class="co"># do moderated t test</span>
-                               <span class="dt">adj.method =</span> <span class="st">&quot;BH&quot;</span>) <span class="co"># multiple comparison adjustment</span></code></pre>
+                               <span class="dt">adj.method =</span> <span class="st">&quot;BH&quot;</span>) <span class="co"># multiple comparison adjustment</span></code></pre></div>
 <p>Let’s check the output.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(test.pd)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(test.pd)</code></pre></div>
 <pre><code>## [1] &quot;Protein&quot;    &quot;Label&quot;      &quot;log2FC&quot;     &quot;SE&quot;         &quot;DF&quot;        
 ## [6] &quot;pvalue&quot;     &quot;adj.pvalue&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show test result</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show test result</span>
 <span class="co"># Label : which comparison is used</span>
 <span class="co"># log2FC : estimated log2 fold change between two conditions (the contrast)</span>
 <span class="co"># adj.pvalue : adjusted p value</span>
-<span class="kw">head</span>(test.pd)</code></pre>
+<span class="kw">head</span>(test.pd)</code></pre></div>
 <pre><code>##   Protein     Label      log2FC         SE       DF     pvalue adj.pvalue
 ## 1  A1L0T0   1-0.125  0.07999809 0.04407490 105.9517 0.07234539  0.2127806
 ## 2  A1L0T0 0.667-0.5 -0.04897305 0.04407490 105.9517 0.26902646  0.4352093
@@ -1247,13 +1244,13 @@ comparison_all</code></pre>
 <div id="save-the-comparison-result-1" class="section level4">
 <h4><span class="header-section-number">3.2.7.3</span> Save the comparison result</h4>
 <p>Let’s save the testing result as .csv file.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(test.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/pd.result.rda&#39;</span>)
-<span class="kw">write.csv</span>(test.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/testResult_pd.csv&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">save</span>(test.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/pd.result.rda&#39;</span>)
+<span class="kw">write.csv</span>(test.pd, <span class="dt">file=</span><span class="st">&#39;data/data_ProteomeDiscoverer_TMT/testResult_pd.csv&#39;</span>)</code></pre></div>
 </div>
 <div id="significant-tests" class="section level4">
 <h4><span class="header-section-number">3.2.7.4</span> Significant tests</h4>
 <p>Let’s inspect the results to see what proteins are changing significantly between two concentrations.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(test.pd)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(test.pd)</code></pre></div>
 <pre><code>##   Protein     Label      log2FC         SE       DF     pvalue adj.pvalue
 ## 1  A1L0T0   1-0.125  0.07999809 0.04407490 105.9517 0.07234539  0.2127806
 ## 2  A1L0T0 0.667-0.5 -0.04897305 0.04407490 105.9517 0.26902646  0.4352093
@@ -1261,118 +1258,29 @@ comparison_all</code></pre>
 ## 4  O00625 0.667-0.5 -0.02494449 0.01930260 105.9517 0.19906924  0.3981385
 ## 5  O60427   1-0.125  0.04234680 0.02688754 105.9517 0.11824700  0.3284639
 ## 6  O60427 0.667-0.5  0.01193862 0.02688754 105.9517 0.65793338  0.8023578</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># select subset of rows with adj.pvalue &lt; 0.05</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># select subset of rows with adj.pvalue &lt; 0.05</span>
 SignificantProteins &lt;-<span class="st"> </span>
 <span class="st">  </span>test.pd[test.pd<span class="op">$</span>adj.pvalue <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.05</span> ,]
 
-SignificantProteins</code></pre>
-<pre><code>##        Protein     Label    log2FC         SE        DF       pvalue
-## 7    P00915ups   1-0.125 1.9194954 0.05722839  84.95168 8.945464e-51
-## 8    P00915ups 0.667-0.5 0.2749177 0.05722839  84.95168 6.627634e-06
-## 9    P01008ups   1-0.125 2.1144893 0.06806652  84.95168 3.713705e-48
-## 10   P01008ups 0.667-0.5 0.2896649 0.06806652  84.95168 5.344220e-05
-## 11   P01031ups   1-0.125 1.8041566 0.11087020  68.95168 2.618058e-25
-## 12   P01031ups 0.667-0.5 0.4107830 0.10542938  68.95168 2.234092e-04
-## 13   P01344ups   1-0.125 2.0688076 0.06904749  91.95168 3.130553e-49
-## 14   P01344ups 0.667-0.5 0.3713574 0.06904749  91.95168 5.682775e-07
-## 15   P01375ups   1-0.125 2.5243218 0.08825488  77.95168 4.360217e-43
-## 16   P01375ups 0.667-0.5 0.3386098 0.08825488  77.95168 2.517549e-04
-## 17   P01579ups   1-0.125 1.6369755 0.09944662  77.95168 4.355455e-27
-## 19   P02741ups   1-0.125 1.8161644 0.06738557  77.95168 2.947523e-41
-## 20   P02741ups 0.667-0.5 0.3161686 0.06738557  77.95168 1.135753e-05
-## 21   P02753ups   1-0.125 1.5937054 0.08948401  77.95168 3.355143e-29
-## 22   P02753ups 0.667-0.5 0.2909960 0.08948401  77.95168 1.694685e-03
-## 23   P02787ups   1-0.125 2.0540332 0.03904033 105.95168 9.144927e-78
-## 24   P02787ups 0.667-0.5 0.2987191 0.03904033 105.95168 9.649755e-12
-## 25   P02788ups   1-0.125 1.8663815 0.03138725  98.95168 2.995382e-79
-## 26   P02788ups 0.667-0.5 0.2883261 0.03138725  98.95168 6.544522e-15
-## 29   P05413ups   1-0.125 2.0644363 0.08101181 105.95168 5.372994e-47
-## 30   P05413ups 0.667-0.5 0.2541415 0.08101181 105.95168 2.209538e-03
-## 33 P10636-8ups   1-0.125 2.4076666 0.09799311 103.95168 4.284414e-45
-## 34 P10636-8ups 0.667-0.5 0.4545902 0.09628875 103.95168 7.354719e-06
-## 45   P62988ups   1-0.125 0.3426051 0.03193782 105.95168 1.286571e-18
-## 49   P68871ups   1-0.125 2.4318364 0.06435396 104.95168 6.249411e-63
-## 50   P68871ups 0.667-0.5 0.2824179 0.06380626 104.95168 2.355015e-05
-## 97   P02144ups   1-0.125 2.0888596 0.06699695  70.95168 3.779206e-43
-## 98   P02144ups 0.667-0.5 0.2559477 0.06699695  70.95168 2.828965e-04
-##      adj.pvalue
-## 7  1.118183e-49
-## 8  7.354719e-05
-## 9  3.094754e-47
-## 10 3.340138e-04
-## 11 9.350206e-25
-## 12 1.241162e-03
-## 13 3.130553e-48
-## 14 9.471292e-06
-## 15 2.180109e-42
-## 16 1.258775e-03
-## 17 1.675175e-26
-## 19 1.339783e-40
-## 20 9.464611e-05
-## 21 1.397976e-28
-## 22 7.061187e-03
-## 23 2.286232e-76
-## 24 2.412439e-10
-## 25 1.497691e-77
-## 26 3.272261e-13
-## 29 3.837853e-46
-## 30 8.498222e-03
-## 33 2.677759e-44
-## 34 7.354719e-05
-## 45 4.288570e-18
-## 49 1.041569e-61
-## 50 1.682154e-04
-## 97 2.099559e-42
-## 98 1.285893e-03</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(SignificantProteins)</code></pre>
-<pre><code>## [1] 28</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># select subset of rows with adj.pvalue &lt; 0.05 and absoluate log2FC &gt; 1</span>
-SignificantProteinsLargeFC &lt;-<span class="st"> </span>SignificantProteins[<span class="kw">abs</span>(SignificantProteins<span class="op">$</span>log2FC) <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> ,]
-SignificantProteinsLargeFC</code></pre>
-<pre><code>##        Protein   Label   log2FC         SE        DF       pvalue
-## 7    P00915ups 1-0.125 1.919495 0.05722839  84.95168 8.945464e-51
-## 9    P01008ups 1-0.125 2.114489 0.06806652  84.95168 3.713705e-48
-## 11   P01031ups 1-0.125 1.804157 0.11087020  68.95168 2.618058e-25
-## 13   P01344ups 1-0.125 2.068808 0.06904749  91.95168 3.130553e-49
-## 15   P01375ups 1-0.125 2.524322 0.08825488  77.95168 4.360217e-43
-## 17   P01579ups 1-0.125 1.636975 0.09944662  77.95168 4.355455e-27
-## 19   P02741ups 1-0.125 1.816164 0.06738557  77.95168 2.947523e-41
-## 21   P02753ups 1-0.125 1.593705 0.08948401  77.95168 3.355143e-29
-## 23   P02787ups 1-0.125 2.054033 0.03904033 105.95168 9.144927e-78
-## 25   P02788ups 1-0.125 1.866381 0.03138725  98.95168 2.995382e-79
-## 29   P05413ups 1-0.125 2.064436 0.08101181 105.95168 5.372994e-47
-## 33 P10636-8ups 1-0.125 2.407667 0.09799311 103.95168 4.284414e-45
-## 49   P68871ups 1-0.125 2.431836 0.06435396 104.95168 6.249411e-63
-## 97   P02144ups 1-0.125 2.088860 0.06699695  70.95168 3.779206e-43
-##      adj.pvalue
-## 7  1.118183e-49
-## 9  3.094754e-47
-## 11 9.350206e-25
-## 13 3.130553e-48
-## 15 2.180109e-42
-## 17 1.675175e-26
-## 19 1.339783e-40
-## 21 1.397976e-28
-## 23 2.286232e-76
-## 25 1.497691e-77
-## 29 3.837853e-46
-## 33 2.677759e-44
-## 49 1.041569e-61
-## 97 2.099559e-42</code></pre>
+<span class="co"># make volcano plot</span>
+<span class="kw">library</span>(MSstats)
+<span class="kw">groupComparisonPlots</span>(<span class="dt">data=</span>test.pd, <span class="dt">type=</span><span class="st">&quot;VolcanoPlot&quot;</span>)</code></pre></div>
 </div>
 <div id="different-parameter-options-for-group-comparison" class="section level4">
 <h4><span class="header-section-number">3.2.7.5</span> Different parameter options for group comparison</h4>
 <p>If you want to make all the pairwise comparison,<code>MSstatsTMT</code> has an easy option for it. Setting <code>contrast.matrix = pairwise</code> compares all the possible pairs between two conditions.</p>
-<pre class="sourceCode r"><code class="sourceCode r">test.pd.pairwise &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.pd, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test.pd.pairwise &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.pd, 
                                <span class="dt">contrast.matrix =</span> <span class="st">&quot;pairwise&quot;</span>,
                                <span class="dt">remove_norm_channel =</span> <span class="ot">TRUE</span>, <span class="co"># remove norm channels</span>
                                <span class="dt">moderated =</span> <span class="ot">TRUE</span>, <span class="co"># do moderated t test</span>
                                <span class="dt">adj.method =</span> <span class="st">&quot;BH&quot;</span>) <span class="co"># multiple comparison adjustment</span>
 
 <span class="co"># show the comparisons</span>
-<span class="kw">unique</span>(test.pd.pairwise<span class="op">$</span>Label)</code></pre>
+<span class="kw">unique</span>(test.pd.pairwise<span class="op">$</span>Label)</code></pre></div>
 <pre><code>## [1] &quot;0.125-0.5&quot;   &quot;0.125-0.667&quot; &quot;0.125-1&quot;     &quot;0.5-0.667&quot;   &quot;0.5-1&quot;      
 ## [6] &quot;0.667-1&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># make volcano plot</span>
+<span class="kw">groupComparisonPlots</span>(<span class="dt">data=</span>test.pd.pairwise, <span class="dt">type=</span><span class="st">&quot;VolcanoPlot&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="msstatstmt.log-and-sessioninfo.txt" class="section level3">
@@ -1384,24 +1292,24 @@ SignificantProteinsLargeFC</code></pre>
 <li>Try <code>proteinSummarization</code> with <code>msstats</code> summarization and between-runs normalization for MaxQuant output. (<code>input.maxquant.rda</code> from section 4)</li>
 </ol>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/input.maxquant.rda&#39;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">load</span>(<span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/input.maxquant.rda&#39;</span>)
 quant.maxquant &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.maxquant, 
                              <span class="dt">method =</span> <span class="st">&quot;msstats&quot;</span>, 
-                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre>
+                             <span class="dt">normalization =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <blockquote>
 <ol start="2" style="list-style-type: decimal">
 <li>Try <code>proteinSummarization</code> with <code>msstats</code> summarization and without normalization for MaxQuant output. (<code>input.maxquant.rda</code> from section 4)</li>
 </ol>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r">quant.maxquant.nonorm &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.maxquant, 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">quant.maxquant.nonorm &lt;-<span class="kw">proteinSummarization</span>(<span class="dt">data =</span> input.maxquant, 
                              <span class="dt">method =</span> <span class="st">&quot;msstats&quot;</span>, 
-                             <span class="dt">normalization =</span> <span class="ot">FALSE</span>)</code></pre>
+                             <span class="dt">normalization =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <blockquote>
 <ol start="3" style="list-style-type: decimal">
 <li>Draw Profile plots of protein <code>P26639</code>, for both cases above and compare.</li>
 </ol>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.maxquant, <span class="co"># PSM-level data</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dataProcessPlotsTMT</span>(<span class="dt">data.psm=</span>input.maxquant, <span class="co"># PSM-level data</span>
                      <span class="dt">data.summarization=</span>quant.maxquant, <span class="co"># protein-level data</span>
                      <span class="dt">type=</span><span class="st">&#39;ProfilePlot&#39;</span>, <span class="co"># choice of visualization</span>
                      <span class="dt">width =</span> <span class="dv">15</span>,
@@ -1415,14 +1323,14 @@ quant.maxquant &lt;-<span class="kw">proteinSummarization</span>(<span class="dt
                      <span class="dt">height =</span> <span class="dv">5</span>,
                      <span class="dt">originalPlot =</span> <span class="ot">FALSE</span>,
                      <span class="dt">which.Protein =</span> <span class="st">&#39;P26639&#39;</span>,
-                     <span class="dt">address=</span><span class="st">&quot;data/data_MaxQuant_TMT/maxquant_nonorm_P26639_&quot;</span>)</code></pre>
+                     <span class="dt">address=</span><span class="st">&quot;data/data_MaxQuant_TMT/maxquant_nonorm_P26639_&quot;</span>)</code></pre></div>
 <blockquote>
 <ol start="4" style="list-style-type: decimal">
 <li>From <code>quant.maxquant</code> data, find the differentially abundant comparisons using <code>groupComparison</code> with the same <code>comparison</code> matrix.</li>
 </ol>
 </blockquote>
-<pre class="sourceCode r"><code class="sourceCode r">test.maxquant &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.maxquant, <span class="dt">contrast.matrix =</span> comparison)
-<span class="kw">write.csv</span>(test.maxquant, <span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/testResult_maxquant.csv&#39;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test.maxquant &lt;-<span class="st"> </span><span class="kw">groupComparisonTMT</span>(<span class="dt">data =</span> quant.maxquant, <span class="dt">contrast.matrix =</span> comparison)
+<span class="kw">write.csv</span>(test.maxquant, <span class="dt">file=</span><span class="st">&#39;data/data_MaxQuant_TMT/testResult_maxquant.csv&#39;</span>)</code></pre></div>
 <hr />
 
 </div>
@@ -1479,19 +1387,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>
